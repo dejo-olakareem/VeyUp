@@ -1,0 +1,12 @@
+
+<p><%= logged_in? %></p>
+<% if logged_in? %>
+  <% if current_user.id == @user.id %>
+    <h2>This is awesome</h2>
+    <%= @user.email %>
+  <% else %>
+    <p>You are not logged in  </p>
+  <% end %>
+<% else %>
+  <p>Please Log in</p>
+<% end %>

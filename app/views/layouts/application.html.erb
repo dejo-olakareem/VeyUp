@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SurveyLine</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>SurveyLine</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <%= yield %>
+  <div id="user_header">
+    <% if current_user %>
+      <%= link_to 'Logout', logout_path %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path %>
+      <%= link_to "Log In", login_path %>
+    <% end %>
+  </div>
+</body>
 </html>
