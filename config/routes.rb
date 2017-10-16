@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   get 'sessions/new'
+
+
   resources :sessions
   resources :users do
     resources :surveys, shallow: true
+  end
+
+  resources :surveys, only: [] do
+    resources :questions, shallow: true
   end
 
   get 'signup', to: 'users#new', as: 'signup'

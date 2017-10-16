@@ -1,0 +1,6 @@
+<%= f.fields_for :questions,  Question.new do |question_form| %>
+    <p>
+        Question: <%= question_form.text_field :text %>
+    </p>
+
+<% end %>

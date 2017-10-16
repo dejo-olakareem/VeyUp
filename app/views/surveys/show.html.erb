@@ -1,4 +1,5 @@
-<%= @survey.name %>
+<%= @survey.name %><br>
 <%= link_to "Edit", edit_survey_path(@survey) %>
 <%= link_to "Back", user_path(@user) %>
+
 <%= link_to "Delete", survey_path(@survey), method: :delete, data: {confirm: "You sure?"} %>
