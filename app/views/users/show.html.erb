@@ -1,8 +1,10 @@
 
-<p><%= logged_in? %></p>
 <% if logged_in? %>
   <% if current_user.id == @user.id %>
-    <h2>This is awesome</h2>
+    <%= link_to "Create a new survey", new_user_survey_path(@user, @survey) %>
+      <% @user.surveys.each do |survey| %>
+      <%= link_to survey.name, survey_path(survey) %><br>
+    <% end %>
     <%= @user.email %>
   <% else %>
     <p>You are not logged in  </p>
