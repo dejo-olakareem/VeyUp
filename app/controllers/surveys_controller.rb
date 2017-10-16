@@ -16,7 +16,7 @@ class SurveysController < ApplicationController
 
 
   def edit
-
+    @survey = Survey.find(params[:id])
   end
 
   def create
@@ -35,10 +35,22 @@ class SurveysController < ApplicationController
 
 
   def update
+    @user = current_user
+    @survey = Survey.find(params[:id])
+
+    if @survey.update(survey_params)
+      redirect_to user_path(@user)
+    else
+      render 'edit'
+    end
 
   end
 
-  def delete
+  def destroy
+    @user = current_user
+    @survey = @user.surveys.find(params[:id])
+    @survey.destroy
+    redirect_to user_path(@user)
   end
 
   private
