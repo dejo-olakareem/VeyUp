@@ -20,6 +20,7 @@ class SurveysController < ApplicationController
   end
 
   def create
+
     @user = User.find(params[:user_id])
     @survey = @user.surveys.create(survey_params)
 
@@ -27,12 +28,9 @@ class SurveysController < ApplicationController
     if @survey.save
       redirect_to user_path(@user)
     else
-      render new
+      render :new
     end
   end
-
-
-
 
   def update
     @user = current_user
@@ -51,6 +49,10 @@ class SurveysController < ApplicationController
     @survey = @user.surveys.find(params[:id])
     @survey.destroy
     redirect_to user_path(@user)
+  end
+
+  def get_question_partial
+    render partial: 'question'
   end
 
   private

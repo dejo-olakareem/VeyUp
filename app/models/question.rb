@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
-  belongs_to :survey, inverse_of: :questions
+  validates :text, presence: true
+
+  belongs_to :survey
   has_many :answers
 end

@@ -1,7 +1,6 @@
-
 <% if logged_in? %>
   <% if current_user.id == @user.id %>
-    <h4>Welcome  <%= @user.email %> </h4>
+    <h4>Welcome <%= @user.email %> </h4>
     <%= link_to "Create a new survey", new_user_survey_path(@user, @survey) %>
       <% @user.surveys.each do |survey| %>
       <%= link_to survey.name, survey_path(survey) %><br>

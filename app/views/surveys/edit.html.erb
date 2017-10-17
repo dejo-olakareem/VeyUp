@@ -4,6 +4,11 @@
       <%= f.text_field :name, placeholder: @survey.name %>
     </div>
 
+  <% @survey.questions.each do %>
+    <%= render partial: 'question_edit', locals: {f: f} %>
+  <% end %>
+
+
     <div class="actions"><%= f.submit "Finish Editing" %></div>
   <% end %>
 

@@ -1,0 +1,7 @@
+<%= f.fields_for :questions do |question_form| %>
+    <p>
+      Question: <%= question_form.text_field :text, placeholder: "<%= question.text" %>
+      <%= question_form.check_box :_destroy %>
+      <%= question_form.label :_destroy, "Remove Question" %>
+    </p>
+  <% end %>

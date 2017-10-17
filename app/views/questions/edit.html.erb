@@ -1,0 +1,11 @@
+<%= form_for @question  do |f| %>
+  <div class="field">
+    <%= f.text_field :text, placeholder: @question.text %>
+  </div>
+
+<%= link_to "Back", question_path(@question) %>
+
+
+  <div class="actions"><%= f.submit "Finish editing" %></div>
+<% end %>
+
