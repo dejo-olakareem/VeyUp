@@ -8,6 +8,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
+
     @survey = Survey.find(params[:survey_id])
     @question = Question.new
   end

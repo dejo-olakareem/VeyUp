@@ -5,10 +5,8 @@ class SurveysController < ApplicationController
   end
 
   def show
-
     @user = current_user
     @survey = Survey.find(params[:id])
-
   end
 
   def new
