@@ -1,0 +1,12 @@
+<%= form_for ([@question,@answer])  do |f| %>
+  <div class="field">
+    <%= f.text_field :text, placeholder: "Your Answer here" %>
+
+  </div>
+
+<%= link_to "Back", question_path(@question) %>
+
+
+  <div class="actions"><%= f.submit "Create Answer" %></div>
+<% end %>
+

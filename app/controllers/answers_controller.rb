@@ -5,6 +5,11 @@ class AnswersController < ApplicationController
   end
 
   def new
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
+
     @question = Question.find(params[:question_id])
     @answer = Answer.new
   end

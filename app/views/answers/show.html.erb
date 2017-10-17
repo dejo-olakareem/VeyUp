@@ -1,8 +1,11 @@
-<h1><%=@answer.text%></h1>
-<%= link_to "Edit", edit_answer_path(@answer) %>
-<%= link_to "Back", question_path(@question) %>
-<%= link_to "Delete", answer_path(@answer), method: :delete, data: {confirm: "You sure?"} %><br>
-
+<% if current_user.answers.include? @answer %>
+  <h1><%=@answer.text%></h1>
+  <%= link_to "Edit", edit_answer_path(@answer) %>
+  <%= link_to "Back", question_path(@question) %>
+  <%= link_to "Delete", answer_path(@answer), method: :delete, data: {confirm: "You sure?"} %><br>
+<% else %>
+  <p>You cannot view what you did not create</p>
+<% end %>
 
 
 

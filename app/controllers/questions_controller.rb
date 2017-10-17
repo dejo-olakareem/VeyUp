@@ -1,9 +1,6 @@
 class QuestionsController < ApplicationController
    def show
-
     @question = Question.find(params[:id])
-    p @question.answers.empty?
-    p "e" * 99
     @survey = Survey.find(@question.survey_id)
   end
 

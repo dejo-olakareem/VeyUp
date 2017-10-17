@@ -1,15 +1,14 @@
+<% if current_user.surveys.include? @survey %>
   <%= form_for @survey do  |f|%>
     <div class="field">
       <%= f.label :name %>
       <%= f.text_field :name, placeholder: @survey.name %>
     </div>
 
-  <% @survey.questions.each do %>
-    <%= render partial: 'question_edit', locals: {f: f} %>
-  <% end %>
-
-
     <div class="actions"><%= f.submit "Finish Editing" %></div>
   <% end %>
 
   <%= link_to "Back", survey_path %>
+<% else %>
+  <p>You cannot edit what you do not create</p>
+<% end %>

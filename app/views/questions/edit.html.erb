@@ -1,11 +1,14 @@
-<%= form_for @question  do |f| %>
-  <div class="field">
-    <%= f.text_field :text, placeholder: @question.text %>
-  </div>
+<% if current_user.questions.include? @question %>
+  <%= form_for @question  do |f| %>
+    <div class="field">
+      <%= f.text_field :text, placeholder: @question.text %>
+    </div>
 
-<%= link_to "Back", question_path(@question) %>
+  <%= link_to "Back", question_path(@question) %>
 
 
-  <div class="actions"><%= f.submit "Finish editing" %></div>
+    <div class="actions"><%= f.submit "Finish editing" %></div>
+  <% end %>
+<% else %>
+  <p>You cannot edit what you did not create</p>
 <% end %>
-
