@@ -1,0 +1,12 @@
+<%= form_for ([@user,@survey])  do |f| %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: "Survey name" %>
+  </div>
+
+   <!-- <div class="field">
+    <%#= f.number_field :number_of_questions, min: 1, max: 4, :step => 'any', class: "number", placeholder: "number of questions" %>
+  </div>
+ -->
+  <div class="actions"><%= f.submit "Create Survey" %></div>
+<% end %>
+

@@ -2,10 +2,12 @@
 <%= link_to "Edit", edit_survey_path(@survey) %>
 <%= link_to "Back", user_path(@user) %>
 <%= link_to "Delete", survey_path(@survey), method: :delete, data: {confirm: "You sure?"} %><br>
-<%= link_to "Create Question for Your Survey", new_survey_question_path(@survey, @question) %>
-<% if @survey.questions %>
+<%= link_to "Create Question for Your Survey", new_survey_question_path(@survey, @question), :remote => true %>
+<% if @survey.questions.empty? %>
+  <h3>Start Your survey today</h3>
+<% else %>
   <h3>This are your questions to this survey</h3>
-<% end %>
-<% @survey.questions.each do |question| %>
+  <% @survey.questions.each do |question| %>
   <%= link_to question.text, question_path(question) %><br>
+<% end %>
 <% end %>

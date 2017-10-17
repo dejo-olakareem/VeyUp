@@ -5,11 +5,18 @@ class SurveysController < ApplicationController
   end
 
   def show
+
     @user = current_user
     @survey = Survey.find(params[:id])
+
   end
 
   def new
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
+
     @user = User.find(params[:user_id])
     @survey = Survey.new
   end
