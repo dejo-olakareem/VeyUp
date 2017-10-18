@@ -9,6 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" />
+
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -20,5 +22,8 @@
     <%= render '/header' %>
   </head>
   <%= yield %>
+  <footer>
+    <%= render '/footer' %>
+  </footer>
 </body>
 </html>
