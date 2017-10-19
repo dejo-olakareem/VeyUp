@@ -1,7 +1,7 @@
 <%= form_for ([@survey,@question])  do |f| %>
-    <%= f.text_field :text, placeholder: "Your Question here" %><br>
-    <%= f.submit "Create Question" %>
+    <%= f.text_field :text, placeholder: "Your Question here", class: 'input-lg' %><br>
+    <%= f.submit "Create Question", class: 'btn btn-sucess btn-lg' %>
   <button>
-    <%= link_to "Back", survey_path(@survey) %>
+    <%= link_to "Back", survey_path(@survey), class: 'btn btn-success btn-lg' %>
   </button>
 <% end %>
