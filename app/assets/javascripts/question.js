@@ -1,12 +1,10 @@
-$(document).ready(function(){
-  setNewQuestionListener();
+$(document).on("turbolinks:load", function(){
+  hideCreateSurvey()
 });
 
-var setNewQuestionListener = function(){
 
-
-  $('#add-question').on('click', function(){
-    $('#question-holder').prepend("what is this")
-
-  });
-};
+var hideCreateSurvey = function(){
+  $("#create_survey").click(function(){
+    $(this).hide()
+  })
+}

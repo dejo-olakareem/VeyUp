@@ -1,12 +1,9 @@
 <%= form_for ([@user,@survey])  do |f| %>
-  <div class="field">
-    <%= f.text_field :name, placeholder: "Survey name" %>
+  <div style="margin:0px 0px 10px 0px;">
+    <%= f.text_field :name, placeholder: "Survey name", class: 'input-lg' %>
   </div>
 
-   <!-- <div class="field">
-    <%#= f.number_field :number_of_questions, min: 1, max: 4, :step => 'any', class: "number", placeholder: "number of questions" %>
-  </div>
- -->
-  <div class="actions"><%= f.submit "Create Survey" %></div>
+  <%= f.submit "Create Survey",class: 'btn btn-warning btn-lg' %>
+  <%= link_to "Back", user_path(@user), class: 'btn btn-warning btn-lg'%>
 <% end %>
 
