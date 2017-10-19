@@ -1,7 +1,7 @@
 <%= form_for ([@survey,@question])  do |f| %>
   <div class="field">
     <%= f.text_field :text, placeholder: "Your Question here" %>
-
+    <%= f.file_field :avatars %>
   </div>
 
 <%= link_to "Back", survey_path(@survey) %>

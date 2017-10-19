@@ -1,7 +1,10 @@
 class QuestionsController < ApplicationController
    def show
+
     @question = Question.find(params[:id])
     @survey = Survey.find(@question.survey_id)
+    p "r" * 89
+    p @question.avatar
   end
 
   def new
@@ -52,6 +55,6 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:text)
+    params.require(:question).permit(:text, :avatar)
   end
 end
