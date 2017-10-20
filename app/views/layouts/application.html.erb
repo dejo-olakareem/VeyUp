@@ -21,6 +21,8 @@
   <head>
     <%= render '/header' %>
   </head>
+  <div class="alert"><%= flash[:alert] %></div>
+
   <%= yield %>
   <footer>
     <%= render '/footer' %>

@@ -1,1 +1,3 @@
-config.omniauth :facebook, "App ID", "App Secret", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+Rails.application.config.middleware.use OmniAuth::Builder do
+provider :facebook, ENV['App_ID'], ENV['App_Secret'], "callbackURL": "/auth/facebook/callback/"
+end
