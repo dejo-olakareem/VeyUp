@@ -9,11 +9,11 @@
         <p class="survey_text">We will like you to Get your friends and family opinion</p>
       <% else %>
         <p> This are your last 3 surveys</p>
-        <div style="padding: :10px 0px 10px 0px;">
+        <!-- <div style="padding: :10px 0px 10px 0px;"> -->
         <% @user.surveys.each do |survey| %>
-        <%= link_to survey.name, survey_path(survey), class: 'btn btn-warning btn-lg' %>
+        <%= link_to survey.name, survey_path(survey), class: 'btn btn-warning btn-md', :style => 'margin-bottom: 10px;'%>
       <% end %>
-      </div>
+      <!-- </div> -->
     <% end %>
   <% else %>
     <p>You are not logged in  </p>
