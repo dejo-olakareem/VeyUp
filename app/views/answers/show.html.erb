@@ -1,5 +1,7 @@
 <% if current_user.answers.include? @answer %>
+
   <h1><%=@answer.text%></h1>
+  <div style="height: 200;width: 300px" ><%= image_tag @answer.picture.url if @answer.picture? %></div>
   <%= link_to "Edit", edit_answer_path(@answer) %>
   <%= link_to "Back", question_path(@question) %>
   <%= link_to "Delete", answer_path(@answer), method: :delete, data: {confirm: "You sure?"} %><br>

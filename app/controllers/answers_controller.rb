@@ -50,6 +50,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:text)
+    params.require(:answer).permit(:text, :picture)
   end
 end

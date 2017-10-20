@@ -2,6 +2,8 @@
   <div class="field">
     <%= f.text_field :text, placeholder: "Your Answer here" %>
 
+    <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png' %>
+
   </div>
 
 <%= link_to "Back", question_path(@question) %>
