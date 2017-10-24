@@ -9,13 +9,18 @@
   <div class="actions"><%#= submit_tag "Log In" %></div>
 <%# end %> -->
                         <%= form_tag sessions_path do %>
-<div class="text-center" style="height:initial;padding:100px 0px;opacity:0.6;background-color:transparent;;margin:0px auto;width:80%;">
+<div class="text-center" style="height:initial;padding:100px 0px;opacity:0.6;background-color:transparent;margin:0px auto;width:80%;">
                         <div style="margin:0px 0px 10px 0px;">
-                         <%= text_field_tag :email, params[:email], placeholder: "Email", class: 'input-lg'  %>
+                            <%= text_field_tag :email, params[:email], placeholder: "Email", class: 'input-lg'  %>
                          </div>
                          <div style="margin:0px 0px 10px 0px;">
-                         <%= password_field_tag :password, "",placeholder: "Password",class: 'input-lg' %>
+                            <%= password_field_tag :password, "",placeholder: "Password",class: 'input-lg' %>
                          </div>
-                         <%= submit_tag "Log In", class: 'btn btn-warning btn-lg' %>
-                    </div>
+                         <div style="margin:0px 0px 10px 0px;">
+                            <%= submit_tag "Log In", class: 'btn btn-warning btn-lg' %>
+                        </div>
                         <% end %>
+                          <div style="margin:0px 0px 10px 0px;">
+                            <%= link_to "Sign In with Facebook" ,"/auth/facebook",  class: 'btn btn-success btn-lg' %>
+                          </div>
+                        </div>

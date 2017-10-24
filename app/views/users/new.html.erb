@@ -13,22 +13,24 @@
   <% end %>
 
 
-                <div style="padding:40px 0px 10px 0px;">
+                <div style="padding:30px 0px 5px 0px;">
                     <%= f.text_field :email, placeholder: "Email", class: 'input-lg' %>
                 </div>
-                <div style="padding:0px 0px 10px 0px;">
+                <div style="padding:0px 0px 5px 0px;">
                     <%= f.password_field :password, placeholder: "Password", class: 'input-lg' %>
                 </div>
-                <div style="padding:0px 0px 10px 0px;">
+                <div style="padding:0px 0px 0px 0px;">
                     <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: 'input-lg' %>
                 </div>
-                <div style="padding:0px 0px 10px 0px;">
+                <div style="padding:0px 0px 5px 0px;">
                     <p>Forgot Password</p>
-                    <%= f.submit "Sign Up", class: 'btn btn-info btn-lg' %>
+                    <%= f.submit "Sign Up", class: 'btn btn-info btn-md' %>
                 </div>
-                <div>
-                    <%= link_to "Sign in with Facebook" ,"/auth/facebook" %>
-                    <button class="btn btn-default btn-lg" type="button">Sign In with Google</button>
+                <div style="padding:0px 0px 5px 0px;">
+                    <button class="btn btn-danger btn-md" type="button">Sign In with Google</button>
+                </div>
+                <div style="padding:0px 0px 5px 0px;">
+                    <%= link_to "Sign up with Facebook" ,"/auth/facebook",  class: 'btn btn-success btn-md' %>
                 </div>
 <% end %>
             </div>
