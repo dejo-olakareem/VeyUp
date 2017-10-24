@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :questions, only: [] do
     resources :answers, shallow: true
   end
-  get 'auth/facebook/callback', to: 'sessions#create_from_facebook'
+  get 'auth/:provider/callback', to: 'sessions#create_from_facebook'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'

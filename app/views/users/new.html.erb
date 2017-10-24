@@ -27,7 +27,9 @@
                     <%= f.submit "Sign Up", class: 'btn btn-info btn-md' %>
                 </div>
                 <div style="padding:0px 0px 5px 0px;">
-                    <button class="btn btn-danger btn-md" type="button">Sign In with Google</button>
+                    <!-- <button class="btn btn-danger btn-md" type="button">Sign In with Google</button> -->
+                    <%= link_to "Sign up with Google" ,"/auth/google_oauth2",  class: 'btn btn-danger btn-md' %>
+
                 </div>
                 <div style="padding:0px 0px 5px 0px;">
                     <%= link_to "Sign up with Facebook" ,"/auth/facebook",  class: 'btn btn-success btn-md' %>

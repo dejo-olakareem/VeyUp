@@ -17,10 +17,13 @@
                             <%= password_field_tag :password, "",placeholder: "Password",class: 'input-lg' %>
                          </div>
                          <div style="margin:0px 0px 10px 0px;">
-                            <%= submit_tag "Log In", class: 'btn btn-warning btn-lg' %>
+                            <%= submit_tag "Log In", class: 'btn btn-warning btn-md' %>
                         </div>
                         <% end %>
                           <div style="margin:0px 0px 10px 0px;">
-                            <%= link_to "Sign In with Facebook" ,"/auth/facebook",  class: 'btn btn-success btn-lg' %>
+                            <%= link_to "Sign In with Google" ,"/auth/google_oauth2",  class: 'btn btn-danger btn-md' %>
+                          </div>
+                          <div style="margin:0px 0px 10px 0px;">
+                            <%= link_to "Sign In with Facebook" ,"/auth/facebook",  class: 'btn btn-success btn-md' %>
                           </div>
                         </div>

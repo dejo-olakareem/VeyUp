@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+  source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -36,9 +36,13 @@ gem 'fog', '~> 1.40.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#In other to use omniauth google this gem have to be at 1.3.1
+gem 'omniauth-oauth2', '~> 1.3.1'
 #facebook omniauth
 gem 'omniauth-facebook'
 
+#google omniaauth
+gem "omniauth-google-oauth2", "~> 0.2.1"
 #dotenv
 gem 'dotenv'
 
