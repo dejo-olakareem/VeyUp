@@ -1,9 +1,9 @@
 <%= form_for ([@user,@survey])  do |f| %>
   <div style="margin:0px 0px 10px 0px;">
-    <%= f.text_field :name, placeholder: "Survey name", class: 'input-lg', :maxlength => 20 %>
+    <%= f.text_field :name, placeholder: "Survey name", class: 'reponsive-input', :maxlength => 20 %>
   </div>
 
-  <%= f.submit "Create Survey",class: 'btn btn-warning btn-lg' %>
-  <%= link_to "Back", user_path(@user), class: 'btn btn-warning btn-lg'%>
+  <%= f.submit "Create Survey",class: 'btn btn-warning resposive-button' %>
+  <%= link_to "Back", user_path(@user), class: 'btn btn-warning resposive-button'%>
 <% end %>
 
