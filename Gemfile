@@ -36,6 +36,9 @@ gem 'fog', '~> 1.40.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#Yelp gem
+gem 'yelp', require: 'yelp'
+
 #In other to use omniauth google this gem have to be at 1.3.1
 gem 'omniauth-oauth2', '~> 1.3.1'
 #facebook omniauth
