@@ -47,7 +47,14 @@
 .responsive-search{
   margin-top: -6.5px;
   @media screen and (max-width: 640px){
-    margin-top: 0px
+    margin-top: 0px;
+  }
+}
+
+.responsive-footer{
+  display: visible;
+  @media screen and (max-width: 640px){
+    display: none;
   }
 }
 // .input-lg {
