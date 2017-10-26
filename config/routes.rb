@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   end
 
   resources :businesses
+
   get 'auth/:provider/callback', to: 'sessions#create_from_facebook'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
-  root 'welcome#index'
+  root 'businesses#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

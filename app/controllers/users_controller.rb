@@ -14,10 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = User.find(params[:id])
-    p "r" * 99
-    p @user.image
     @user.surveys = @user.surveys.order("created_at").last(3)
   end
 

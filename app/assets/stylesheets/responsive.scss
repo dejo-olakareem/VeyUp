@@ -44,7 +44,12 @@
   }
 }
 
-
+.responsive-search{
+  margin-top: -6.5px;
+  @media screen and (max-width: 640px){
+    margin-top: 0px
+  }
+}
 // .input-lg {
 //   height: 46px;
 //   padding: 10px 16px;
