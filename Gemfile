@@ -36,8 +36,6 @@ gem 'fog', '~> 1.40.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#rate
-gem 'ratyrate'
 #Yelp gem
 gem 'yelp', require: 'yelp'
 
