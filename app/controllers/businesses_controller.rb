@@ -1,9 +1,8 @@
 require 'json'
 class BusinessesController < ApplicationController
   def index
-    @business = Business.where(term: params[:term]).order("created_at").last(4)
+    @business = Business.where(term: params[:term])
   end
-
   def new
     @business =Business.new
   end
