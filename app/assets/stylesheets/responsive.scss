@@ -59,18 +59,18 @@
 }
 
 .responsive-row {
-  height:500px;
+  height:450px;
   margin:auto -15px;
   @media screen and (max-width:640px){
     margin:auto -15px;
-    height: 250px
+    height: 240px
   }
 }
 
 .responsive-text{
   font-size: 12px;
   @media screen and (max-width:640px){
-    font-size: 10px;
+    font-size: 8px;
   }
 }
 

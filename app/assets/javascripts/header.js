@@ -34,9 +34,7 @@ var goin = function(){
 var checked = function(){
   var i = 3
   var rating = $('.rator').first().text()
-  console.log(rating);
   var rate = parseFloat(rating);
-  console.log(rate);
   while(i < rate){
     $('.fa-star').addClass("checked")
     i++
