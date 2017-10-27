@@ -1,7 +1,7 @@
 require 'json'
 class BusinessesController < ApplicationController
   def index
-    @business = Business.all
+    @business = Business.where(term: params[:term]).order("created_at").last(4)
   end
 
   def new
@@ -12,7 +12,7 @@ class BusinessesController < ApplicationController
 
       @business = Business.where(term: params[:business][:term])
       @term = params[:business][:term]
-    if @business.length < 0
+    if @business.length <= 0
       require 'uri'
       require 'net/http'
 
@@ -47,18 +47,22 @@ class BusinessesController < ApplicationController
          @business.zip_code  = yelp["location"]["zip_code"]
          @business.state  = yelp["location"]["state"]
          @business.term = @term
+         @business.image_url = yelp["image_url"]
 
 
 
          @business.save
        end
+            redirect_to businesses_path(term: params[:business][:term])
          else
-            p "r" * 99
-            p @business
-            p "r" * 99
-
+            # @business = Business.where(term: params[:business][:term])
+            redirect_to businesses_path(term: params[:business][:term])
      end
 
+  end
+
+  def show
+    @business = Business.limit(4)
   end
 
   private
