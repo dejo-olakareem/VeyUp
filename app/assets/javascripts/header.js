@@ -1,20 +1,8 @@
 $(document).on("turbolinks:load", function(){
   goin()
-  checked()
+  // checked()
+  example()
   // clickoncoco()
-
-//   $(window).resize(function () {
-//     var viewportWidth = $(window).width();
-//     if (viewportWidth < 420) {
-//             $(".input-lg").removeClass("input-lg").addClass("input-sm");
-//             $(".btn-lg").removeClass("btn-lg").addClass("btn-sm");
-//     }else{
-//             $(".input-sm").removeClass("input-sm").addClass("input-lg");
-//             $(".btn-sm").removeClass("btn-sm").addClass("btn-lg");
-
-//     }
-// });
-
 
 });
 
@@ -31,12 +19,28 @@ var goin = function(){
 }
 
 
-var checked = function(){
-  var i = 3
-  var rating = $('.rator').first().text()
-  var rate = parseFloat(rating);
-  while(i < rate){
-    $('.fa-star').addClass("checked")
-    i++
-  }
+// var checked = function(){
+//   var i = 0
+//   var rating = $('.rator').first().text()
+//   var rate = parseFloat(rating);
+//   while(i < rate){
+//     $('#' + i).addClass("checked")
+//     i++
+//   }
+// }
+
+
+var example = function(){
+var rating = $('.rator')
+for (var index = 0; index < rating.length; index++) {
+  console.log(rating[index].innerHTML)
+  //   $('#' + i).addClass("checked")
+
+  // var i = 0
+  // while(i < rating[index].innerHTML){
+  //     console.log("add class to element")
+  //   $('#' + i).addClass("checked")
+  //   i++
+  // }
+}
 }
