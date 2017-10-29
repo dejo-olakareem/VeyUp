@@ -15,7 +15,7 @@ class BusinessesController < ApplicationController
       require 'uri'
       require 'net/http'
 
-      url = URI("https://api.yelp.com/v3/businesses/search?term=#{params[:business][:term]}&location=sanfrancisco&Authorization=ENV[token]%20ENV[token_secret]")
+      url = URI("https://api.yelp.com/v3/businesses/search?term=#{params[:business][:term]}&location=sanfrancisco&limit=50&Authorization=ENV[token]%20ENV[token_secret]")
 
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
@@ -27,6 +27,7 @@ class BusinessesController < ApplicationController
       request["authorization"] = ENV['token'] + ' ' +  ENV['token_secret']
       request["cache-control"] = 'no-cache'
       request["postman-token"] = ENV['postman-token']
+      request["limit"] = '50'
 
       response = http.request(request)
       # puts response.read_body
@@ -61,7 +62,7 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.limit(4)
+    @business = Business.find(params[:id])
   end
 
   private
