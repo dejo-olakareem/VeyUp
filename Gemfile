@@ -36,6 +36,9 @@ gem 'fog', '~> 1.40.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#date picker gem
+gem 'jquery-ui-rails', '5.0.5'
+
 #Yelp gem
 gem 'yelp', require: 'yelp'
 

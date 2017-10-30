@@ -1,5 +1,6 @@
 $(document).on("turbolinks:load", function(){
   goin()
+  $('#datepicker').datepicker();
 });
 
 var goin = function(){

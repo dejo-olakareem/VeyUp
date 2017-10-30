@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+
+
   private
 
   def current_user
@@ -16,6 +18,12 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user, :logged_in? ,  :create_with_omniauth
+
+  def datepicker_input form, field
+    content_tag :td, :data => {:provide => 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-autoclose' => 'true'} do
+      form.text_field field, class: 'form-control', placeholder: 'YYYY-MM-DD'
+    end
+  end
 
 end
 

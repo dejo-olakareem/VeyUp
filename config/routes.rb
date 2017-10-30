@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
+
+  get 'reservations/new'
+
+  get 'reservations/create'
+
+  get 'reservations/edit'
+
+  get 'reservations/show'
+
+  get 'reservations/index'
+
   get 'welcome/index'
   resources :sessions
   resources :users do
     resources :surveys, shallow: true
+    resources :reservations, shallow: true
   end
 
   resources :surveys, only: [] do
