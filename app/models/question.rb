@@ -8,9 +8,9 @@ class Question < ApplicationRecord
   has_many :answers
 
   # Validates the size of an uploaded picture.
-    def picture_size
-      if avatar.size > 5.megabytes
-        errors.add(:picture, "should be less than 5MB")
-      end
+  def picture_size
+    if avatar.size > 5.megabytes
+      errors.add(:picture, "should be less than 5MB")
     end
+  end
 end

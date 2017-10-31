@@ -9,8 +9,8 @@ class BusinessesController < ApplicationController
 
   def create
 
-      @business = Business.where(term: params[:business][:term])
-      @term = params[:business][:term]
+    @business = Business.where(term: params[:business][:term])
+    @term = params[:business][:term]
     if @business.length <= 0
       require 'uri'
       require 'net/http'
@@ -36,40 +36,40 @@ class BusinessesController < ApplicationController
 
       api_response["businesses"].each do |yelp|
         @business= Business.new()
-         @business.name = yelp["name"]
-         @business.price = yelp["price"]
-         @business.rating = yelp["rating"]
-         @business.review_count  = yelp["review_count"]
-         @business.city  = yelp["location"]["city"]
-         @business.country  = yelp["location"]["country"]
-         @business.address  = yelp["location"]["address1"]
-         @business.country  = yelp["location"]["country"]
-         @business.zip_code  = yelp["location"]["zip_code"]
-         @business.state  = yelp["location"]["state"]
-         @business.term = @term
-         @business.image_url = yelp["image_url"]
+        @business.name = yelp["name"]
+        @business.price = yelp["price"]
+        @business.rating = yelp["rating"]
+        @business.review_count  = yelp["review_count"]
+        @business.city  = yelp["location"]["city"]
+        @business.country  = yelp["location"]["country"]
+        @business.address  = yelp["location"]["address1"]
+        @business.country  = yelp["location"]["country"]
+        @business.zip_code  = yelp["location"]["zip_code"]
+        @business.state  = yelp["location"]["state"]
+        @business.term = @term
+        @business.image_url = yelp["image_url"]
 
 
 
-         @business.save
-       end
-            redirect_to businesses_path(term: params[:business][:term])
-         else
+        @business.save
+      end
+      redirect_to businesses_path(term: params[:business][:term])
+    else
             # @business = Business.where(term: params[:business][:term])
             redirect_to businesses_path(term: params[:business][:term])
-     end
+          end
 
-  end
+        end
 
-  def show
-    @user = current_user
-    @business = Business.find(params[:id])
-    @reservation = Reservation.where(business_id: @business.id, user_id: @user.id).last
-  end
+        def show
+          @user = current_user
+          @business = Business.find(params[:id])
+          @reservation = Reservation.where(business_id: @business.id, user_id: @user.id).last
+        end
 
-  private
-  def allowed_params
-    params.require(:business).permit(:rating,:price,:phone,:name,:review_count,:image_url,:city,:country,:address,:state,:zip_code,:term )
-  end
+        private
+        def allowed_params
+          params.require(:business).permit(:rating,:price,:phone,:name,:review_count,:image_url,:city,:country,:address,:state,:zip_code,:term )
+        end
 
-end
+      end

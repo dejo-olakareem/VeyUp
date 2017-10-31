@@ -21,10 +21,10 @@
 }
 
 .responsive-image {
-    width:150px;
-    height:150px;
+  width:150px;
+  height:150px;
 
-    @media screen and (max-width: 640px) {
+  @media screen and (max-width: 640px) {
     width:90px;
     height:90px;
   }

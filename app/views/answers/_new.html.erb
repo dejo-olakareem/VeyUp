@@ -1,14 +1,9 @@
 <%= form_for ([@question,@answer])  do |f| %>
-  <div class="field">
+<div class="field">
     <%= f.text_field :text, placeholder: "Your Answer here" %>
-
     <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png' %>
-
-  </div>
-
+</div>
 <%= link_to "Back", question_path(@question) %>
-
-
-  <div class="actions"><%= f.submit "Create Answer" %></div>
+<div class="actions"><%= f.submit "Create Answer" %></div>
 <% end %>
 
