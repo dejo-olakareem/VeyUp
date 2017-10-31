@@ -13,8 +13,13 @@
                 </div>
             </div>
         </div>
+
+        <% if @business.users.include? current_user %>
+            <p>You have a reservation with <%= @business.name %> by <%= @reservation.start_time.strftime("%A %B %e, %Y %l:%M %p") %></p>
+        <% else  %>
         <div style="padding-top:15px;padding-bottom:15px;text-align:center;">
-            <button class="btn btn-default responsive-button" type="button"><%= link_to "Make a Reservation",reservations_new_path(@reservation), class: 'link-to-text-color' %></button>
+            <button class="btn btn-default responsive-button" type="button"><%= link_to "Make a Reservation",new_business_reservation_path(@business), class: 'link-to-text-color' %></button>
         </div>
+        <% end %>
     </div>
 </body>

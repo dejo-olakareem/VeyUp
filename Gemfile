@@ -38,7 +38,10 @@ gem 'fog', '~> 1.40.0'
 
 #date picker gem
 gem 'jquery-ui-rails', '5.0.5'
-
+#time picker gem
+gem 'bootstrap-sass', '3.2.0.2'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 #Yelp gem
 gem 'yelp', require: 'yelp'
 

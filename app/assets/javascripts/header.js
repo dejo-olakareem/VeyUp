@@ -1,6 +1,14 @@
 $(document).on("turbolinks:load", function(){
   goin()
   $('#datepicker').datepicker();
+
+
+
+           $(function () {
+                $('#datetimepicker1').datetimepicker({
+                });
+            });
+
 });
 
 var goin = function(){

@@ -25,7 +25,9 @@ Rails.application.routes.draw do
     resources :answers, shallow: true
   end
 
-  resources :businesses
+  resources :businesses do
+    resources :reservations, shallow: true
+  end
 
   get 'auth/:provider/callback', to: 'sessions#create_from_facebook'
   get 'signup', to: 'users#new'

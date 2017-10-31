@@ -62,7 +62,9 @@ class BusinessesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @business = Business.find(params[:id])
+    @reservation = Reservation.where(business_id: @business.id, user_id: @user.id).last
   end
 
   private
