@@ -1,9 +1,11 @@
-<%= form_for ([@question,@answer])  do |f| %>
-<div class="field">
-    <%= f.text_field :text, placeholder: "Your Answer here" %>
-    <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png' %>
+<div class="text-center " style="height:initial;padding:20px 0px;opacity:0.8;margin:0px auto;width:80%;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
+  <%= form_for ([@question,@answer])  do |f| %>
+  <div class="field">
+      <%= f.text_field :text, placeholder: "Your Answer here", class: 'responsive-input' %>
+      <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png', class: 'responsive-survey_text responsive_upload_image' %>
+  </div>
+  <%= f.submit "Create Answer", class: 'btn btn-warning responsive-button' %>
+  <%= link_to "Back", question_path(@question), class: 'btn btn-warning responsive-button' %>
+  <% end %>
 </div>
-<%= link_to "Back", question_path(@question) %>
-<div class="actions"><%= f.submit "Create Answer" %></div>
-<% end %>
 

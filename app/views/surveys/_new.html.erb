@@ -1,8 +1,10 @@
+<div class="text-center " style="height:initial;padding:25px 0px;opacity:0.8;margin:0px auto;width:80%;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
 <%= form_for ([@user,@survey])  do |f| %>
   <div style="margin:0px 0px 10px 0px;">
-    <%= f.text_field :name, placeholder: "Survey name", class: 'reponsive-input', :maxlength => 20 %>
+    <%= f.text_field :name, placeholder: "Survey name", class: 'responsive-input', :maxlength => 20 %>
   </div>
-  <%= f.submit "Create Survey",class: 'btn btn-warning resposive-button' %>
-  <%= link_to "Back", user_path(@user), class: 'btn btn-warning resposive-button'%>
+  <%= f.submit "Create Survey",class: 'btn btn-warning responsive-button' %>
+  <%= link_to "Back", user_path(@user), class: 'btn btn-warning responsive-button'%>
 <% end %>
+</div>
 

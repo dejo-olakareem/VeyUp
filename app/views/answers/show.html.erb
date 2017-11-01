@@ -1,12 +1,18 @@
-<% if current_user.answers.include? @answer %>
-  <h1><%=@answer.text%></h1>
-  <div style="height: 200;width: 300px" ><%= image_tag @answer.picture.url if @answer.picture? %></div>
-  <%= link_to "Edit", edit_answer_path(@answer) %>
-  <%= link_to "Back", question_path(@question) %>
-  <%= link_to "Delete", answer_path(@answer), method: :delete, data: {confirm: "You sure?"} %><br>
-<% else %>
-  <p>You cannot view what you did not create</p>
-<% end %>
+<div class="text-center " style="height:initial;padding:20px 0px;opacity:0.8;margin:0px auto;width:80%;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
+  <% if current_user.answers.include? @answer %>
+    <h1 class="responsive-survey_text"><%=@answer.text%></h1>
+    <% if @answer.picture.url %>
+      <%= image_tag @answer.picture.url, :class => "img-responsive responsive_upload_image"%>
+    <% end %>
+    <div style="margin:10px 0px 10px 0px;">
+    <%= link_to "Edit", edit_answer_path(@answer), class: 'btn btn-warning responsive-button' %>
+    <%= link_to "Back", question_path(@question), class: 'btn btn-warning responsive-button' %>
+    <%= link_to "Delete", answer_path(@answer), method: :delete, data: {confirm: "You sure?"},class: 'btn btn-warning responsive-button' %>
+    </div>
+  <% else %>
+    <p>You cannot view what you did not create</p>
+  <% end %>
+</div>
 
 
 

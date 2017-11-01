@@ -36,7 +36,7 @@
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
-  color: #f0ad4e;
+  color: white;
 
   @media screen and (max-width: 640px) {
     // Small button
@@ -77,6 +77,14 @@
   }
 }
 
+.responsive-survey_text{
+  font-size: 15px;
+  color: black;
+  @media screen and (max-width:640px){
+    font-size: 12px;
+  }
+}
+
 .checked {
   color: orange;
 }
@@ -85,4 +93,8 @@
   // display: none;
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.responsive_upload_image{
+  margin: 0 auto;
 }

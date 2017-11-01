@@ -1,12 +1,15 @@
+<div class="text-center " style="height:initial;padding:100px 0px;opacity:0.8;margin:0px auto;width:80%;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
 <% if current_user.surveys.include? @survey %>
   <%= form_for @survey do  |f|%>
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder: @survey.name %>
+    <div style="margin:0px 0px 10px 0px;">
+      <%= f.text_field :name, placeholder: @survey.name, class: 'responsive-input' %>
     </div>
-    <div class="actions"><%= f.submit "Finish Editing" %></div>
+    <div>
+      <%= f.submit "Finish Editing", class: 'btn btn-warning responsive-button'%>
+      <%= link_to "Back", survey_path, class: 'btn btn-warning responsive-button' %>
+    </div>
   <% end %>
-  <%= link_to "Back", survey_path %>
 <% else %>
   <p>You cannot edit what you do not create</p>
 <% end %>
+</div>

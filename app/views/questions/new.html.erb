@@ -1,8 +1,10 @@
-<%= form_for ([@survey,@question])  do |f| %>
-  <div class="field">
-    <%= f.text_field :text, placeholder: "Your Question here" %>
-    <%= f.file_field :avatars %>
+<div class="text-center " style="height:initial;padding:100px 0px;opacity:0.8;margin:0px auto;width:80%;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
+  <%= form_for ([@survey,@question])  do |f| %>
+    <div style="margin:0px 0px 10px 0px;">
+      <%= f.text_field :text, placeholder: "Your Question here" %>
+      <%= f.file_field :avatars %>
     </div>
-  <%= link_to "Back", survey_path(@survey) %>
-  <div class="actions"><%= f.submit "Create Question" %></div>
-<% end %>
+    <%= link_to "Back", survey_path(@survey), class: 'btn btn-warning responsive-button' %>
+    <%= f.submit "Create Question", class: 'btn btn-warning responsive-button' %>
+  <% end %>
+</div>
