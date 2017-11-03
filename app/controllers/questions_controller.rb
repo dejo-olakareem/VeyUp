@@ -1,10 +1,7 @@
 class QuestionsController < ApplicationController
  def show
-
   @question = Question.find(params[:id])
   @survey = Survey.find(@question.survey_id)
-  p "r" * 89
-  p @question.avatar
 end
 
 def new
@@ -24,23 +21,26 @@ end
 def create
   @survey = Survey.find(params[:survey_id])
   @question = @survey.questions.create(question_params)
-
-
   if @question.save
-    redirect_to survey_path(@survey)
+    if params[:question][:avatar].present?
+      render 'crop'
+    else
+      redirect_to survey_path(@survey)
+    end
   else
     render :new
   end
 end
 
 def update
-  @question = Question.find(params[:id])
+  p @question = Question.find(params[:id])
   @survey = Survey.find(@question.survey_id)
-
-
-
-  if @question.update(question_params)
-    redirect_to survey_path(@survey)
+  if @question.update_attributes(question_params)
+    if params[:question][:avatar].present?
+      render :crop
+    else
+      redirect_to survey_path(@survey)
+    end
   else
     render 'edit'
   end
@@ -55,6 +55,6 @@ end
 
 private
 def question_params
-  params.require(:question).permit(:text, :avatar)
+  params.require(:question).permit(:text,:avatar,:crop_x,:crop_y,:crop_w,:crop_h)
 end
 end

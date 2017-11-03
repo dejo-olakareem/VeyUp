@@ -1,7 +1,9 @@
 <div class="text-center " style="padding:0.3px 0px;opacity:0.8;margin:-19px 0px 5px 0px;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
   <% if current_user.questions.include? @question %>
     <h1 class="responsive-survey_text" ><a href="/questions/<%= @question.id%>/edit" style="color:black; text-decoration:none;" ><%=@question.text%></a></h1>
-      <%#= image_tag @question.avatar.url, :class => "img-responsive responsive_upload_image" %>
+      <% if @question.avatar?cd .. %>
+        <%= image_tag @question.avatar.url, :class => "img-responsive responsive_upload_image" %>
+      <% end %>
     <div style="margin:10px 0px 10px 0px;">
     <%= link_to "Edit", edit_question_path(@question), class: 'btn btn-warning responsive-button' %>
     <%= link_to "Back", survey_path(@survey), class: 'btn btn-warning responsive-button' %>

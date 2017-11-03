@@ -4,8 +4,40 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+
+  #for crop
+  version :thumb do
+    process :crop
+    resize_to_fill(100, 100)
+  end
+
+  version :tiny, from_version: :thumb do
+    process resize_to_fill: [20, 20]
+  end
+
+  version :large do
+    process :crop
+    resize_to_fill(600, 600)
+  end
+
+  def crop
+    if model.crop_x.present?
+      resize_to_limit(600, 600)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        # [[w, h].join('x'),[x, y].join('+')].join('+') => "wxh+x+y"
+        img.crop([[w, h].join('x'),[x, y].join('+')].join('+'))
+        img
+      end
+    end
+  end
   # Resize picture
-  process resize_to_limit: [400,400]
+  # process resize_to_limit: [400,400]
+
+
   # Included for uploading picture in production
   if Rails.env.production?
     storage :fog
