@@ -5,11 +5,10 @@ class PictureUploader < CarrierWave::Uploader::Base
 
 
   def auto_orient
-  manipulate! do |img|
-    img = img.auto_orient
+    manipulate! do |img|
+      img = img.auto_orient
+    end
   end
-end
-
 
 
   process :auto_orient
