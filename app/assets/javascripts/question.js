@@ -12,8 +12,18 @@ var hideCreateSurvey = function(){
 
 var like = function(){
   $(".like").click(function(){
-    console.log("vibe");
-    $(this).siblings().children("span").toggleClass("yellow")
+    console.log("guilt")
+    var targetHeart = $(this).parent().find('.fa-heart')
+    var heartsInTargetContainer = $(this).closest('.container').find('.fa-heart')
+
+    if (targetHeart.hasClass('yellow')) {
+      targetHeart.removeClass('yellow')
+    } else {
+      heartsInTargetContainer.removeClass('yellow')
+      targetHeart.addClass('yellow')
+    }
+
+    // $(this).siblings().children("span").toggleClass("yellow")
   });
 };
 
