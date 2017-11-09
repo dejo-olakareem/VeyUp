@@ -2,7 +2,7 @@
   <%= form_for ([@survey,@question])  do |f| %>
     <div style="margin:0px 0px 10px 0px;">
       <%= f.text_field :text, placeholder: "Your Question here" %>
-      <%= f.file_field :avatars %>
+      <%#= f.file_field :avatars %>
     </div>
     <%= link_to "Back", survey_path(@survey), class: 'btn btn-warning responsive-button' %>
     <%= f.submit "Create Question", class: 'btn btn-warning responsive-button' %>
