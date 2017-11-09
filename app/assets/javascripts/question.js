@@ -13,7 +13,7 @@ var hideCreateSurvey = function(){
 var like = function(){
   $(".like").click(function(){
     console.log("vibe");
-    $(this).siblings().children("span").css( "color", "red" )
+    $(this).siblings().children("span").toggleClass("yellow")
   });
 };
 
