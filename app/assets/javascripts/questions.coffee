@@ -7,7 +7,7 @@ class AvatarCrop
     height = parseInt($('#cropbox').height())
     $('#cropbox').Jcrop
       aspectRatio: 1
-      setSelect: [0, 0, width, height]
+      setSelect: [0, 0, 600, 600]
       onSelect: @update
       onChange: @update
 

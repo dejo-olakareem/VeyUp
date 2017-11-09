@@ -20,3 +20,4 @@
 //= require bootstrap-datetimepicker
 // for cropping
 //= require jcrop
+//= require cropper

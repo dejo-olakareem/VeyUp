@@ -7,18 +7,28 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   #for crop
   version :thumb do
+    process :auto_orient
     process :crop
     resize_to_fill(100, 100)
   end
 
   version :tiny, from_version: :thumb do
+    process :auto_orient
     process resize_to_fill: [20, 20]
   end
 
   version :large do
+    process :auto_orient
     process :crop
     resize_to_fill(600, 600)
   end
+
+
+  def auto_orient
+  manipulate! do |img|
+    img = img.auto_orient
+  end
+end
 
   def crop
     if model.crop_x.present?

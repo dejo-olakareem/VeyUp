@@ -1,9 +1,99 @@
 $(document).on("turbolinks:load", function(){
   hideCreateSurvey()
-  pictureSize()
-// $(function() {
-//   return new AvatarCrop();
-// });
+
+  // $('#cropbox').cropper({
+  //   aspectRatio: 16 / 9,
+  //   crop: function(e) {
+  //     // Output the result data for cropping image.
+  //     console.log(e.x);
+  //     console.log(e.y);
+  //     console.log(e.width);
+  //     console.log(e.height);
+  //     console.log(e.rotate);
+  //     console.log(e.scaleX);
+  //     console.log(e.scaleY);
+  //   }
+  // });
+
+  // $(".fa-arrows").click(function(){
+  //   $("#cropbox").cropper("setDragMode", "move")
+  // });
+
+  // $(".fa-crop").click(function(){
+  //   $("#cropbox").cropper("setDragMode", "crop")
+  // });
+
+  // $(".fa-search-plus").click(function(){
+  //   $("#cropbox").cropper("zoom", 0.1)
+  // });
+
+  // $(".fa-search-minus").click(function(){
+  //   $("#cropbox").cropper("zoom", -0.1)
+  // });
+
+  // $(".fa-arrow-left").click(function(){
+  //   $("#cropbox").cropper("move", -10, 0)
+  // });
+
+  // $(".fa-arrow-right").click(function(){
+  //   $("#cropbox").cropper("move", 10, 0)
+  // });
+
+  // $(".fa-arrow-up").click(function(){
+  //   $("#cropbox").cropper("move", 0, -10)
+  // });
+
+  // $(".fa-arrow-down").click(function(){
+  //   $("#cropbox").cropper("move", 0, 10)
+  // });
+
+  // $(".fa-rotate-left").click(function(){
+  //   $("#cropbox").cropper("rotate", -45)
+
+  // });
+
+  // $(".fa-rotate-right").click(function(){
+  //   $("#cropbox").cropper("rotate", 45)
+  // });
+
+  // $(".fa-arrows-h").click(function(){
+  //   $("#cropbox").cropper("scaleX", -1)
+  // });
+
+  // $(".fa-arrows-v").click(function(){
+  //   $("#cropbox").cropper("scaleY", -1)
+  // });
+
+  // $(".fa-check").click(function(){
+  //   $("#cropbox").cropper("crop")
+  // });
+
+  // $(".fa-remove").click(function(){
+  //   $("#cropbox").cropper("clear")
+  // });
+
+  // $(".fa-lock").click(function(){
+  //   $("#cropbox").cropper("disable")
+  // });
+
+
+  // $(".fa-unlock").click(function(){
+  //     $("#cropbox").cropper("enable")
+  //   });
+
+  // $(".fa-refresh").click(function(){
+  //     $("#cropbox").cropper("reset")
+  //   });
+
+  // $(".fa-power-off").click(function(){
+  //     $("#cropbox").cropper("destroy")
+  //   });
+
+  // $(".fa-unlock").click(function(){
+  //     $("#cropbox").cropper("enable")
+  //   });
+
+
 
 });
 
@@ -14,65 +104,4 @@ var hideCreateSurvey = function(){
   });
 };
 
-var pictureSize = function(){
-$('#question_avatar').bind('change', function() {
-  var size_in_megabytes = this.files[0].size/1024/1024;
-  if (size_in_megabytes > 5) {
-    alert('Maximum file size is 5MB. Please choose a smaller file.');
-  }
-});
-};
 
-// For Picture in answer
-var picSize = function(){
-  $('#answer_picture').bind('change', function() {
-  var size_in_megabytes = this.files[0].size/1024/1024;
-  if (size_in_megabytes > 5) {
-    alert('Maximum file size is 5MB. Please choose a smaller file.');
-  }
-});
-}
-
-var AvatarCrop,
-  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-
-
-AvatarCrop = (function() {
-  function AvatarCrop() {
-    this.updatePreview = bind(this.updatePreview, this);
-    this.update = bind(this.update, this);
-    var height, width;
-    width = parseInt($('#cropbox').width());
-    height = parseInt($('#cropbox').height());
-    $('#cropbox').Jcrop({
-      aspectRatio: 1,
-      setSelect: [0, 0, width, height],
-      onSelect: this.update,
-      onChange: this.update
-    });
-  }
-
-  AvatarCrop.prototype.update = function(coords) {
-    $('#user_crop_x').val(coords.x);
-    $('#user_crop_y').val(coords.y);
-    $('#user_crop_w').val(coords.w);
-    $('#user_crop_h').val(coords.h);
-    return this.updatePreview(coords);
-  };
-
-  AvatarCrop.prototype.updatePreview = function(coords) {
-    var rx, ry;
-    rx = 100 / coords.w;
-    ry = 100 / coords.h;
-    return $('#preview').css({
-      width: Math.round(rx * $('#cropbox').width()) + 'px',
-      height: Math.round(ry * $('#cropbox').height()) + 'px',
-      marginLeft: '-' + Math.round(rx * coords.x) + 'px',
-      marginTop: '-' + Math.round(ry * coords.y) + 'px'
-    });
-  };
-
-  return AvatarCrop;
-
-})();
