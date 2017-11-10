@@ -39,6 +39,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :relationships,       only: [:create, :destroy]
+
   get 'auth/:provider/callback', to: 'sessions#create_from_facebook'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'

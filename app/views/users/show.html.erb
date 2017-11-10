@@ -1,28 +1,32 @@
 <div class="text-center" style="height:initial;padding:100px 0px;opacity:1;margin:0px auto;width:80%;color: black;">
-<% if logged_in? %>
-  <% if current_user.id == @user.id %>
-  <div style="padding:0px 0px 10px 0px;">
-    <img src=<%=current_user.image  + "?type=large"%> class="img-circle responsive-image">
-  </div>
+  <% if logged_in? %>
+    <%= render 'follow_form' if logged_in? %>
+    <% if current_user.id == @user.id %>
+    <div style="padding:0px 0px 10px 0px;">
+      <img src=<%=current_user.image  + "?type=large"%> class="img-circle responsive-image">
+    </div>
+    <section class="stats">
+      <%= render '/stats' %>
+    </section>
 
-  <div style="padding:0px 0px 10px 0px;">
-    <%= link_to "Create a new survey", new_user_survey_path(@user, @survey), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
-</div>
-<div id="survey_attach"></div>
-      <% if @user.surveys.empty? %>
-        <p class="survey_text">Start your Survey</p>
-      <% else %>
-        <p> This are your last 3 surveys</p>
-        <!-- <div style="padding: :10px 0px 10px 0px;"> -->
-        <% @user.surveys.each do |survey| %>
-        <%= link_to survey.name, survey_path(survey), class: 'btn btn-warning responsive-button responsive-text', :style => 'margin-bottom: 10px;'%>
-      <% end %>
-      <!-- </div> -->
+    <div style="padding:0px 0px 10px 0px;">
+      <%= link_to "Create a new survey", new_user_survey_path(@user, @survey), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
+    </div>
+    <div id="survey_attach"></div>
+    <% if @user.surveys.empty? %>
+    <p class="survey_text">Start your Survey</p>
+    <% else %>
+    <p> This are your last 3 surveys</p>
+    <!-- <div style="padding: :10px 0px 10px 0px;"> -->
+    <% @user.surveys.each do |survey| %>
+    <%= link_to survey.name, survey_path(survey), class: 'btn btn-warning responsive-button responsive-text', :style => 'margin-bottom: 10px;'%>
+    <% end %>
+    <!-- </div> -->
+    <% end %>
+    <% else %>
+    <p>You are not logged in  </p>
     <% end %>
   <% else %>
-    <p>You are not logged in  </p>
+    <p>Please Log in</p>
   <% end %>
-<% else %>
-  <p>Please Log in</p>
-<% end %>
 </div>
