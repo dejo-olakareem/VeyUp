@@ -12,6 +12,8 @@ class VotesController < ApplicationController
     @vote = @answer.question.votes.find_by(user_id: current_user.id)
     if @vote
       @vote.destroy
+      @newvote = @answer.votes.find_by(answer_id: params[:answer_id], user_id:current_user.id)
+      res = @answer.votes.create(value: 1, user_id: current_user.id)
     else
       res = @answer.votes.create(value: 1, user_id: current_user.id)
     end
