@@ -12,7 +12,6 @@ var hideCreateSurvey = function(){
 
 var like = function(){
   $(".like").click(function(){
-    console.log("guilt")
     var targetHeart = $(this).parent().find('.fa-heart')
     var heartsInTargetContainer = $(this).closest('.container').find('.fa-heart')
 
@@ -23,7 +22,22 @@ var like = function(){
       targetHeart.addClass('yellow')
     }
 
-    // $(this).siblings().children("span").toggleClass("yellow")
+    var update = $(this)
+    var url = update.attr("action")
+    var method = update.attr("method")
+
+
+    $.ajax({
+      url: url,
+      method: method
+
+     }).done(function(res){
+       console.log(res["votes"])
+       update.parent().find(".vote_count").text(res["votes"])
+    })
+
+
+
   });
 };
 

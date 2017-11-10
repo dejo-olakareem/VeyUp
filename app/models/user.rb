@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :answers, through: :questions
   has_many :reservations
   has_many :businesses, through: :reservations
+  has_many :votes
 end
