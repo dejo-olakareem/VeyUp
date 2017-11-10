@@ -33,6 +33,12 @@ Rails.application.routes.draw do
     resources :reservations, shallow: true
   end
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   get 'auth/:provider/callback', to: 'sessions#create_from_facebook'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
