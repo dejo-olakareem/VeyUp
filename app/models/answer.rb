@@ -5,6 +5,7 @@ class Answer < ApplicationRecord
 
   belongs_to :question
   has_many :votes
+  has_many :likes, through: :votes
 
   def picture_size
     if picture.size > 5.megabytes

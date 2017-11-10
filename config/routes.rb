@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     resources :answers, shallow: true
   end
 
+  resources :answers, only: [] do
+    resources :votes, shallow: true
+  end
+
   resources :businesses do
     resources :reservations, shallow: true
   end
