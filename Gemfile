@@ -59,6 +59,7 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 #dotenv
 gem 'dotenv'
 
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'cropper-rails'
 group :development, :test do
