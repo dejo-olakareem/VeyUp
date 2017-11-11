@@ -32,8 +32,9 @@ var like = function(){
       method: method
 
      }).done(function(res){
-       console.log(res["votes"])
+       console.log(res.votes)
        update.parent().find(".vote_count").text(res["votes"])
+       $(`#${res.old_answer_id}`).text(res.old_answer_vote_count)
     })
 
 

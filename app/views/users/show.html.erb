@@ -1,13 +1,14 @@
 <div class="text-center" style="height:initial;padding:100px 0px;opacity:1;margin:0px auto;width:80%;color: black;">
   <% if logged_in? %>
-     <%#= render 'follow_form' if current_user.id != @user.id%>
     <% if current_user.id == @user.id %>
-    <div style="padding:0px 0px 10px 0px;">
-      <img src=<%=current_user.image  + "?type=large"%> class="img-circle responsive-image">
-    </div>
-    <section class="stats">
-      <%= render '/stats' %>
-    </section>
+      <div style="padding:0px 0px 10px 0px;">
+        <% if current_user.image %>
+          <img src=<%=current_user.image  + "?type=large"%> class="img-circle responsive-image">
+        <% end %>
+        <section class="stats">
+          <%= render '/stats' %>
+        </section>
+      </div>
 
     <div style="padding:0px 0px 10px 0px;">
       <%= link_to "Create a new survey", new_user_survey_path(@user, @survey), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
