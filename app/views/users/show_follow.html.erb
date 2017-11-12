@@ -1,31 +1,26 @@
 <% provide(:title, @title) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1 class="responsive-survey_text"><%= @user.email %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-      <span><b>Questions:</b> <%= @user.questions.count %></span>
-    </section><br>
-    <section>
-      <%= render '/stats' %><br>
-      <% if @users.any? %>
-        <div class="user_avatars" style="margin-top: 30px;">
-          <% @users.each do |user| %>
-            <% if user.image %>
-              <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-follow-image"><br>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-    </section>
-  </aside>
+<h4><%= @title %></h4>
+<h1 class="responsive-survey_text"><%= @user.name %></h1>
+<span><%= link_to "view my profile", @user %></span>
+<span><b>Questions:</b> <%= @user.questions.count %></span>
+<%= render '/stats' %><br>
+<% if @users.any? %>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 text-center">
+        <% if user.image %>
+          <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-follow-image"><br>
+        <% end %>
+        <%#= render :partial => 'follow_form', :locals => {:@user => user}%>
+      </div>
+  <% end %>
+<% end %>
   <div class="col-md-8">
-    <h3><%= @title %></h3>
     <% if @users.any? %>
-      <ul class="users follow responsive-survey_text">
-        <%= render @users %>
-      </ul>
-      <%= will_paginate %>
+    <ul class="users follow responsive-survey_text">
+      <%= render @users %>
+    </ul>
+    <%= will_paginate %>
     <% end %>
   </div>
 </div>
