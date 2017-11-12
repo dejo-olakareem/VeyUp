@@ -26,7 +26,11 @@
     <!-- </div> -->
     <% end %>
     <% else %>
-    <p>You are not logged in  </p>
+    <p><%= @user.name %></p>
+    <% if @user.image %>
+          <img src=<%=@user.image  + "?type=large"%> class="img-circle responsive-image">
+    <% end %>
+    <p>Questions asked: <%= @user.questions.count %></p>
     <% end %>
   <% else %>
     <p>Please Log in</p>
