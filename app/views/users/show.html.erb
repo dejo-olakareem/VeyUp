@@ -2,6 +2,7 @@
   <% if logged_in? %>
     <% if current_user.id == @user.id %>
       <div style="padding:0px 0px 10px 0px;">
+        <p><%= current_user.name %></p>
         <% if current_user.image %>
           <img src=<%=current_user.image  + "?type=large"%> class="img-circle responsive-image">
         <% end %>
