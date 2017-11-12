@@ -1,6 +1,4 @@
-
 .responsive-input {
-
   // Large input box
   height: 46px;
   padding: 10px 16px;
@@ -8,7 +6,6 @@
   line-height: 1.3333333;
   border-radius: 6px;
   border-color: #f0ad4e;
-
 
   @media screen and (max-width: 640px) {
     // Small input box
@@ -30,7 +27,6 @@
   }
 }
 
-
 .responsive-follow-image {
   width:90px;
   height:90px;
@@ -40,6 +36,7 @@
     height:50px;
   }
 }
+
 .responsive-button {
 
   // Large button
@@ -110,14 +107,12 @@
   margin: 0 auto;
 }
 
-
 .responsive-margin{
   margin:0px 260px 5px 260px;
-  @media screen and (max-width:640px){
+  @media screen and (max-width:1024px){
     margin:0px 10px 5px 10px;
   }
 }
-
 
 .responsive-heart{
   font-size: 2em;

@@ -2,10 +2,10 @@
   <% if user.id != current_user.id %>
     <div style="padding:0px 0px 10px 0px;">
       <% if user.image %>
-      <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-image">
+        <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-follow-image">
       <% end %>
       <p><a href="/users/<%= user.id %>"><%= user.email %></a></p>
-      <p><%= user.questions.count%></p>
+      <p>Questions Asked <%= user.questions.count%></p>
       <%= render :partial => 'follow_form', :locals => {:@user => user}%>
     </div>
   <% end %>

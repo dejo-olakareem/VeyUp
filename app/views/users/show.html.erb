@@ -5,7 +5,7 @@
         <% if current_user.image %>
           <img src=<%=current_user.image  + "?type=large"%> class="img-circle responsive-image">
         <% end %>
-        <section class="stats">
+        <section >
           <%= render '/stats' %>
         </section>
       </div>
