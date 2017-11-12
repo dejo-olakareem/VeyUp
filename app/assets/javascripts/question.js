@@ -1,6 +1,7 @@
 $(document).on("turbolinks:load", function(){
   hideCreateSurvey()
   like()
+  home_animation()
 });
 
 
@@ -26,19 +27,23 @@ var like = function(){
     var url = update.attr("action")
     var method = update.attr("method")
 
-
     $.ajax({
       url: url,
       method: method
-
      }).done(function(res){
        console.log(res.votes)
        update.parent().find(".vote_count").text(res["votes"])
        $(`#${res.old_answer_id}`).text(res.old_answer_vote_count)
     })
-
-
-
   });
 };
 
+var home_animation = function(){
+  $( "#home-logo" ).animate({
+    opacity: 0.25,
+    left: "+=50",
+    height: "toggle"
+  }, 2500, function() {
+    $("#question-index").show("slow")
+  });
+}

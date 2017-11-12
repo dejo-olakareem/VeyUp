@@ -3,11 +3,10 @@ class QuestionsController < ApplicationController
    @question = Question.all
  end
 
-
  def show
   @question = Question.find(params[:id])
   @survey = Survey.find(@question.survey_id)
-end
+ end
 
 def new
   respond_to do |format|
