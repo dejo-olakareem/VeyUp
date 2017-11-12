@@ -17,6 +17,36 @@
   }
 }
 
+.responsive-div {
+  width: 30%;
+  height:initial;
+  padding:25px 0px;
+  opacity:0.8;
+  margin:0px auto;
+  font-size: 18px;
+  color: black;
+  background-color: orange;
+  box-shadow: 1px 1px 5px rgba(0,0,0,1);
+  @media screen and (max-width: 640px){
+    width: 80%
+  }
+}
+
+.responsive-div-ajax {
+  width: 50%;
+  height:initial;
+  padding:25px 0px;
+  opacity:0.8;
+  margin:0px auto;
+  font-size: 18px;
+  color: black;
+  background-color: orange;
+  box-shadow: 1px 1px 5px rgba(0,0,0,1);
+  @media screen and (max-width: 640px){
+    width: 80%
+  }
+}
+
 .responsive-image {
   width:150px;
   height:150px;

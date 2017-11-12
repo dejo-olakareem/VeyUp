@@ -19,17 +19,13 @@ class SurveysController < ApplicationController
     @survey = Survey.new
   end
 
-
   def edit
     @survey = Survey.find(params[:id])
   end
 
   def create
-
     @user = User.find(params[:user_id])
     @survey = @user.surveys.create(survey_params)
-
-
     if @survey.save
       redirect_to user_path(@user)
     else
@@ -62,6 +58,6 @@ class SurveysController < ApplicationController
 
   private
   def survey_params
-    params.require(:survey).permit(:name, :number_of_questions, questions_attributes: [:id, :text, :_destroy])
+    params.require(:survey).permit(:name, :number_of_questions)
   end
 end

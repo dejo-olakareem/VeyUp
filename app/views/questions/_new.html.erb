@@ -1,4 +1,4 @@
-<div class="text-center " style="height:initial;padding:25px 0px;opacity:0.8;margin:0px auto;width:80%;font-size: 18px;color: black;background-color: orange; box-shadow: 1px 1px 5px rgba(0,0,0,1)">
+<div class="text-center responsive-div-ajax">
   <%= form_for ([@survey,@question])  do |f| %>
     <%= f.text_field :text, placeholder: "Your Question here", class: 'responsive-input' %><br>
     <%#= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: 'responsive-survey_text' %>
