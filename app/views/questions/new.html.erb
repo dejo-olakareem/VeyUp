@@ -1,7 +1,7 @@
 <div class="text-center responsive-div">
   <%= form_for ([@survey,@question])  do |f| %>
     <div style="margin:0px 0px 10px 0px;">
-      <%= f.text_field :text, placeholder: "Your Question here" %>
+      <%= f.text_field :text, placeholder: "Your Question here",:required => true %>
       <%#= f.file_field :avatars %>
     </div>
     <%= link_to "Back", survey_path(@survey), class: 'btn btn-warning responsive-button' %>

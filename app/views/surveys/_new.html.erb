@@ -1,7 +1,8 @@
 <div class="text-center responsive-div">
-<%= form_for ([@user,@survey])  do |f| %>
+<%= form_for [@user,@survey] do |f| %>
+
   <div style="margin:0px 0px 10px 0px;">
-    <%= f.text_field :name, placeholder: "Survey name", class: 'responsive-input', :maxlength => 20 %>
+    <%= f.text_field :name, placeholder: "Survey name", class: 'responsive-input', :maxlength => 20,:required => true %>
   </div>
   <%= f.submit "Create Survey",class: 'btn btn-warning responsive-button' %>
   <%= link_to "Back", user_path(@user), class: 'btn btn-warning responsive-button'%>

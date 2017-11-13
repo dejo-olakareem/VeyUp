@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20171110174902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
-    t.integer "likes"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -47,7 +46,6 @@ ActiveRecord::Schema.define(version: 20171110174902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
-    t.integer "likes"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -95,7 +93,6 @@ ActiveRecord::Schema.define(version: 20171110174902) do
     t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "likes"
     t.integer "user_id"
   end
 

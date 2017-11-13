@@ -2,7 +2,7 @@
 <% if current_user.surveys.include? @survey %>
   <%= form_for @survey do  |f|%>
     <div style="margin:0px 0px 10px 0px;">
-      <%= f.text_field :name, placeholder: @survey.name, class: 'responsive-input' %>
+      <%= f.text_field :name, placeholder: @survey.name, class: 'responsive-input',:required => true %>
     </div>
     <div>
       <%= f.submit "Finish Editing", class: 'btn btn-warning responsive-button'%>

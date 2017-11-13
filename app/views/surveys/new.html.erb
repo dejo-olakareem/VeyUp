@@ -1,5 +1,15 @@
 <div class="text-center responsive-div">
   <%= form_for ([@user,@survey])  do |f| %>
+      <% if @user.errors.any? %>
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <div style="margin:0px 0px 10px 0px;">
       <%= f.text_field :name, placeholder: "Survey name", class: 'responsive-input' %>
     </div>
