@@ -15,7 +15,8 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-  validates :name,:email, presence: true
+  validates :name,uniqueness: true, presence: true
+  validates :email,uniqueness: true, presence: true
 
   # Follows a user.
   def follow(other_user)
