@@ -2,8 +2,14 @@
   <%= form_for ([@question,@answer])  do |f| %>
   <div class="field">
       <%= f.text_field :text, placeholder: "Your Answer here", class: 'responsive-input',:required => true %>
-      <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png', class: 'responsive-survey_text responsive_upload_image' %>
-      <%=f.file_field :video%>
+      <div class="image-upload">
+       <label for="file-input">
+         <span class="glyphicon glyphicon-camera"></span>
+       </label>
+       <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png', id:'file-input'%>
+     </div>
+
+      <%#=f.file_field :video%>
   </div>
   <%= f.submit "Create Answer", class: 'btn btn-warning responsive-button' %>
   <%= link_to "Back", question_path(@question), class: 'btn btn-warning responsive-button' %>
