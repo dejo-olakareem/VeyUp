@@ -88,12 +88,12 @@ end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png pdf mp4 wmv xls xlsx doc docx ppt pptx mov)
   end
 
-  def content_type_whitelist
-    /image\//
-  end
+  # def content_type_whitelist
+  #   /image video\//
+  # end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

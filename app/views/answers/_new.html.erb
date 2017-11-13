@@ -8,6 +8,12 @@
        </label>
        <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png', id:'file-input'%>
      </div>
+     <div class="image-upload">
+       <label for="file-input">
+         <span class="fa fa-play"></span>
+       </label>
+       <%=f.file_field :video, id: 'file-input'%>
+     </div>
 
       <%#=f.file_field :video%>
   </div>
