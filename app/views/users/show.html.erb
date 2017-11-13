@@ -12,7 +12,7 @@
       </div>
 
     <div style="padding:0px 0px 10px 0px;">
-      <%= link_to "Create a new survey", new_user_survey_path(@user, @survey), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
+      <%= link_to "Start a survey", new_user_survey_path(@user, @survey), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
     </div>
     <div id="survey_attach"></div>
     <% if @user.surveys.empty? %>
