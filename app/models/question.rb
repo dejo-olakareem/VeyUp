@@ -1,6 +1,7 @@
 class Question < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :video, VideoUploader
   #for cropping
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
