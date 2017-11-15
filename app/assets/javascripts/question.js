@@ -51,7 +51,7 @@ var home_animation = function(){
 
 var update = function(){
 $(".update").on("click", ".col-lg-2", (function(){
-  var what = $(this).parent().siblings().children().attr("id","update_need")
+  $(this).parent().siblings().children().attr("id","update_need")
   var need_id = $(this).attr("id")
   $("#update_need").attr('id',need_id)
 })
