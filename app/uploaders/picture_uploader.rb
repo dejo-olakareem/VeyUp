@@ -1,13 +1,18 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
 
 
 
   def auto_orient
     manipulate! do |img|
-      img = img.auto_orient
+    img = img.auto_orient
     end
+  end
+
+  version :small do
+    process resize_to_fill: [200,200]
   end
 
 
@@ -59,12 +64,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png )
   end
 
-  def content_type_whitelist
-    /image\//
-  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

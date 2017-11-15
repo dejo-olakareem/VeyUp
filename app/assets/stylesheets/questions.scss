@@ -35,3 +35,34 @@
 .users.follow {
   padding: 0;
 }
+
+
+.filter-image{
+  width: 80px;
+  height: 80px;
+}
+
+#contrast {
+    // -webkit-filter: invert(100%); /* Safari */
+    filter:contrast(200%);
+}
+
+#grayscale {
+    // -webkit-filter: invert(100%); /* Safari */
+    filter:grayscale(100%);
+}
+#saturate {
+    // -webkit-filter: invert(100%); /* Safari */
+    filter:saturate(3)
+}
+#sepia {
+    // -webkit-filter: invert(100%); /* Safari */
+    filter:sepia(100%);
+}
+#hue-rotate {
+    // -webkit-filter: invert(100%); /* Safari */
+    filter:hue-rotate(90deg);
+}
+
+
+

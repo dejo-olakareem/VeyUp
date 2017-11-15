@@ -23,7 +23,11 @@ class AnswersController < ApplicationController
     @answer = @question.answers.create(answer_params)
 
     if @answer.save
-      redirect_to question_path(@question)
+      if params[:answer][:picture].present?
+        render 'design'
+      else
+        redirect_to question_path(@question)
+      end
     else
       render :new
     end

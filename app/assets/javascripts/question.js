@@ -1,7 +1,8 @@
 $(document).on("turbolinks:load", function(){
   hideCreateSurvey()
   like()
-  home_animation()
+  update()
+  // home_animation()
 });
 
 
@@ -31,7 +32,6 @@ var like = function(){
       url: url,
       method: method
     }).done(function(res){
-     console.log(res.votes)
      update.parent().find(".vote_count").text(res["votes"])
      $(`#${res.old_answer_id}`).text(res.old_answer_vote_count)
    })
@@ -47,3 +47,12 @@ var home_animation = function(){
     $("#question-index").show("slow")
   });
 }
+
+
+var update = function(){
+$(".update").on("click", ".col-lg-2", (function(){
+  var what = $(this).parent().siblings().children().attr("id","update_need")
+  var need_id = $(this).attr("id")
+  $("#update_need").attr('id',need_id)
+})
+)}

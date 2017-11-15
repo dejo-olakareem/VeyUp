@@ -8,8 +8,8 @@
     <%= link_to "Edit", edit_question_path(@question), class: 'btn btn-warning responsive-button' %>
     <%= link_to "Back", survey_path(@survey), class: 'btn btn-warning responsive-button' %>
     <%= link_to "Delete", question_path(@question), method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-warning responsive-button' %>
-    <% if @question.answers.length <= 3 %>
-      <%= link_to "Create Answer", new_question_answer_path(@question, @answer) , remote: true, class: 'btn btn-warning responsive-button'%>
+    <% if @question.answers.length  <= 3 %>
+      <%= link_to "Create Answer #{@question.answers.length + 1}", new_question_answer_path(@question, @answer) , remote: true, class: 'btn btn-warning responsive-button'%>
       <% end %>
     </div>
     <div id="answer_attach"></div>
@@ -22,7 +22,7 @@
     <div class="responsive-row">
         <% @question.answers.each do |answer| %>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 " style="height:100%;padding:5px 5px;">
-                <div style="width:100%;height:70%;background-repeat:no-repeat;background-size:cover;background-image:url(<%= answer.picture_url %>);background-position: center;">
+                <div style="width:100%;height:70%;background-repeat:no-repeat;background-size:cover;background-image:url(<%= answer.picture_url %>);background-position: center;" id="edit">
                 </div>
                 <div class="container"  style="text-align: center; width:100%;height:30%;background-color:white;opacity: 0.8; border-color:#f0ad4e;border-style: groove;">
                     <p class="responsive-survey_text" style="padding-top: 0px;"> <a href="/answers/<%=answer.id%>" style="color:black; text-decoration:none;"> <%= answer.text %></a></p>
@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<div class="container" style="padding:20px 15px;">
+<!-- <div class="container" style="padding:20px 15px;">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
             <div>
@@ -45,5 +45,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 

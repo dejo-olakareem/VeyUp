@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 #gem for uploading
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.7.0'
+gem 'rmagick'
+gem 'carrierwave-imageoptimizer'
 gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 gem 'fog', '~> 1.40.0'
 # Use Capistrano for deployment

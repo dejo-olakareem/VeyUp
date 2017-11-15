@@ -1,6 +1,7 @@
 class Answer < ApplicationRecord
 
   mount_uploader :picture, PictureUploader
+  mount_uploader :video, VideoUploader
   validate  :picture_size
 
   belongs_to :question
@@ -12,4 +13,5 @@ class Answer < ApplicationRecord
       errors.add(:picture, "should be less than 5MB")
     end
   end
+
 end

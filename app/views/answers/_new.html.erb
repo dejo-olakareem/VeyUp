@@ -6,16 +6,8 @@
        <label for="file-input">
          <span class="glyphicon glyphicon-camera"></span>
        </label>
-       <%= f.file_field :picture , accept: 'image/jpeg,image/gif,image/png', id:'file-input'%>
+       <%= f.file_field :picture ,id:'file-input'%>
      </div>
-     <div class="image-upload">
-       <label for="file-input">
-         <span class="fa fa-play"></span>
-       </label>
-       <%=f.file_field :video, id: 'file-input'%>
-     </div>
-
-      <%#=f.file_field :video%>
   </div>
   <%= f.submit "Create Answer", class: 'btn btn-warning responsive-button' %>
   <%= link_to "Back", question_path(@question), class: 'btn btn-warning responsive-button' %>
