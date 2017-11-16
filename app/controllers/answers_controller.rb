@@ -18,9 +18,6 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-  def edit
-    @answer = Answer.find(params[:id])
-  end
 
   def create
     @question = Question.find(params[:question_id])
@@ -37,12 +34,16 @@ class AnswersController < ApplicationController
     end
   end
 
+  def edit
+    @answer = Answer.find(params[:id])
+  end
 
   def update
-    @answer = Answer.find(params[:id])
-    @question = Question.find(@answer.question_id)
-
-    if @answer.update(answer_params)
+     @answer = Answer.find(params[:id])
+     @question = Question.find(@answer.question_id)
+     @answer.update_attributes(answer_params)
+     p @answer.filter
+     if @answer.save
       redirect_to question_path(@question)
     else
       render 'edit'
@@ -57,14 +58,14 @@ class AnswersController < ApplicationController
   end
 
   def design
-    p params[:design_id]
     if request.xhr?
-      render json:{answers:params[:design_id]}
+      # when this request happens update attribute filter of question
+      render json: {answer: params[:design_id]}
     end
   end
 
   private
   def answer_params
-    params.require(:answer).permit(:text, :picture, :video)
+    params.fetch(:answer,{}).permit(:text, :question_id, :picture, :filter, :video)
   end
 end

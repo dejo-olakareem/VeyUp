@@ -58,7 +58,7 @@ $(".update").on("click", ".col-lg-2", (function(){
 
   $.ajax({
     url: `/answers/design/${need_id}`,
-    method: $("form").attr("method"),
+    method: $("form").attr("method")
   }).done(function(res){
     console.log(res)
   });

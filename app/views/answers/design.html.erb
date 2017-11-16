@@ -1,26 +1,35 @@
 <div class="text-center">
   <form id="img" attr="/questions/<%=@question.id%>/answers" method="POST">
+    <% if @answer.picture_url %>
     <%= image_tag @answer.picture_url, id: 'update_need', class: 'responsive'%>
+    <% end %>
   </form>
 
-       <div class="row update" style="margin: 0px auto" id="slider">
-        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="nomarl"  style="margin:5px 5px; background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;display: inline;">
-        </div>
+  <div class="row update" style="margin: 0px auto" id="slider">
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="nomarl"  style="margin:5px 5px; background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;">
+    </div>
 
-        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="contrast"  style="margin:5px 5px; background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;display: inline;">
-        </div>
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="contrast"  style="margin:5px 5px; background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;">
+    </div>
 
-        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="grayscale" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;display: inline;">
-        </div>
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="grayscale" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;">
+    </div>
 
-        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="saturate" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;display: inline;">
-        </div>
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="saturate" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;">
+    </div>
 
-        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="sephia" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;display: inline;">
-        </div>
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="sephia" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;">
+    </div>
 
-        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="hue-rotate" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;display: inline;">
-        </div>
-      </div>
-
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-image" id="hue-rotate" style="margin:5px 5px;background-image: url(<%=@answer.picture.url%>);background-size:cover;background-position: center;">
+    </div>
   </div>
+  <div>
+    <%= form_for @answer  do |f| %>
+      <%= f.hidden_field :text, :value => @answer.text  %>
+      <%= f.hidden_field :picture, :value => @answer.picture_url  %>
+      <%= f.hidden_field :filter, :value => "contrast" %>
+      <%= f.submit "Done editing" %>
+    <% end %>
+  </div>
+</div>
