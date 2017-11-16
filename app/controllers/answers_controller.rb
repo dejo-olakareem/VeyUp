@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  require 'json'
   def index
     @answer= Answer.all
   end
@@ -42,7 +43,7 @@ class AnswersController < ApplicationController
      @answer = Answer.find(params[:id])
      @question = Question.find(@answer.question_id)
      @answer.update_attributes(answer_params)
-     p @answer.filter
+     @answer.filter
      if @answer.save
       redirect_to question_path(@question)
     else
@@ -60,7 +61,7 @@ class AnswersController < ApplicationController
   def design
     if request.xhr?
       # when this request happens update attribute filter of question
-      render json: {answer: params[:design_id]}
+      render json: {filter: params[:filter]}
     end
   end
 

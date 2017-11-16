@@ -28,7 +28,7 @@
     <%= form_for @answer  do |f| %>
       <%= f.hidden_field :text, :value => @answer.text  %>
       <%= f.hidden_field :picture, :value => @answer.picture_url  %>
-      <%= f.hidden_field :filter, :value => "contrast" %>
+      <%= f.text_field :filter, id: 'fill' %>
       <%= f.submit "Done editing" %>
     <% end %>
   </div>

@@ -61,6 +61,7 @@ $(".update").on("click", ".col-lg-2", (function(){
     method: $("form").attr("method")
   }).done(function(res){
     console.log(res)
+    $('#fill').val(res.filter)
   });
 
 })

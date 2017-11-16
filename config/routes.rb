@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships,       only: [:create, :destroy]
-  post 'answers/design/:design_id', to: 'answers#design'
+  post 'answers/design/:filter', to: 'answers#design'
   get 'auth/:provider/callback', to: 'sessions#create_from_facebook'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
