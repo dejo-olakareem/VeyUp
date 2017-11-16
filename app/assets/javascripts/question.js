@@ -3,6 +3,7 @@ $(document).on("turbolinks:load", function(){
   like()
   update()
   // home_animation()
+
 });
 
 
@@ -54,5 +55,13 @@ $(".update").on("click", ".col-lg-2", (function(){
   $(this).parent().siblings().children().attr("id","update_need")
   var need_id = $(this).attr("id")
   $("#update_need").attr('id',need_id)
+
+  $.ajax({
+    url: `/answers/design/${need_id}`,
+    method: $("form").attr("method"),
+  }).done(function(res){
+    console.log(res)
+  });
+
 })
 )}

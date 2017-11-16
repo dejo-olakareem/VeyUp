@@ -1,4 +1,8 @@
 class AnswersController < ApplicationController
+  def index
+    @answer= Answer.all
+  end
+
   def show
     @answer = Answer.find(params[:id])
     @question = Question.find(@answer.question_id)
@@ -50,6 +54,13 @@ class AnswersController < ApplicationController
     @question = Question.find(@answer.question_id)
     @answer.destroy
     redirect_to question_path(@question)
+  end
+
+  def design
+    p params[:design_id]
+    if request.xhr?
+      render json:{answers:params[:design_id]}
+    end
   end
 
   private
