@@ -36,6 +36,8 @@ gem 'rmagick'
 gem 'carrierwave-imageoptimizer'
 gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 gem 'fog', '~> 1.40.0'
+#lightslider
+gem 'light_gallery_rails', git: 'https://github.com/stNicolaas/light-gallery-rails.git'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

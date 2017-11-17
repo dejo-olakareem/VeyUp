@@ -74,6 +74,18 @@
   }
 }
 
+
+.responsive-icon-image {
+  width:30px;
+  height:30px;
+
+  @media screen and (max-width: 640px) {
+    width:30px;
+    height:30px;
+  }
+}
+
+
 .responsive-button {
 
   // Large button

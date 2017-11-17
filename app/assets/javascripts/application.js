@@ -21,3 +21,4 @@
 // for cropping
 //= require jcrop
 //= require cropper
+//= require light-gallery
