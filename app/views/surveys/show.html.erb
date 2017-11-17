@@ -1,22 +1,29 @@
-<div class="text-center responsive-div">
-  <% if current_user.surveys.include? @survey %>
-    <h3 class="responsive-survey_text"><%= @survey.name%></h3>
-    <%= link_to "Edit", edit_survey_path(@survey), class: ' btn btn-warning responsive-button' %>
-    <%= link_to "Back", user_path(@user), class: ' btn btn-warning responsive-button' %>
-    <%= link_to "Delete", survey_path(@survey), method: :delete, data: {confirm: "You sure?"}, class: ' btn btn-warning responsive-button' %><br>
-    <%= link_to "Create Question for Your Survey", new_survey_question_path(@survey, @question), :remote => true, class: 'responsive-button responsive-survey_text' %>
-    <div id="question_attach">
-
+<% if current_user.surveys.include? @survey %>
+  <div class="text-center responsive-div" style="padding: 0px">
+  <div>
+    <!--   <div style="float: left;">
+        <%#= link_to '<i class="fa fa-long-arrow-left fa-2x"></i>'.html_safe, user_path(@user) %>
+      </div> -->
+      <div style="float: right;">
+      <%= link_to '<i class="fa fa-window-close fa-2x"></i>'.html_safe, survey_path(@survey), method: :delete, data: {confirm: "You sure?"} %>
+      </div>
+      <div>
+        <%= link_to @survey.name, edit_survey_path(@survey),style:'Text-decoration: none; clear:both' %>
+      </div>
     </div>
-    <% if @survey.questions.empty? %>
-      <h3>Start Your survey today</h3>
+      <%#= link_to "Back", user_path(@user), class: ' btn btn-warning responsive-button' %>
+      <%= link_to "Create Question for Your Survey", new_survey_question_path(@survey, @question), :remote => true, class: 'responsive-survey_text',style:'Text-decoration: none;' %>
+      <div id="question_attach">
+      </div>
+      <% if @survey.questions.empty? %>
+        <h3>Start Your survey today</h3>
+      <% else %>
+        <h3 class="responsive-survey_text">This are your questions to this survey</h3>
+        <% @survey.questions.each do |question| %>
+        <%= link_to question.text, question_path(question),style:'Text-decoration: none;' %><br>
+      <% end %>
+      <% end %>
     <% else %>
-      <h3 class="responsive-survey_text">This are your questions to this survey</h3>
-      <% @survey.questions.each do |question| %>
-      <%= link_to question.text, question_path(question) %><br>
-    <% end %>
-    <% end %>
-  <% else %>
-    <p>You did not create this survey</p>
-  <%end%>
-</div>
+      <p>You did not create this survey</p>
+  </div>
+<%end%>

@@ -1,22 +1,21 @@
-<nav id="header" class="navbar navbar-default" style="background-color: #f0ad4e;opacity: 1; color:black; border-style: none;">
+
+<nav id="header" class="navbar navbar-default" style="background-color: #ffa50061;opacity: 1; color:black; border-style: none; box-shadow: 1px 1px 5px rgba(0,0,0,1);">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <!-- <a href="/" class="navbar-brand navbar-link"></a> -->
-             <a href="/" class="navbar-brand navbar-link" id="logo"><img src="/assets/LogoSample_ByTailorBrands.jpeg" width="40" style="margin-top:-10px;"/> </a>
-            <button  id="coco" data-toggle="collapse" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-        </div>
         <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav navbar-right" style="font: black;">
+             <a href="/" class="navbar-brand navbar-link" id="logo"><img src="/assets/LogoSample_ByTailorBrands.jpeg" width="40" style="margin-top:-10px;margin-left: -25px"/> </a>
+            <ul class="nav navbar-nav navbar-right" style="font: black;margin-bottom: -15px">
                 <% if current_user %>
-                    <li role="presentation"  id="bust" ><%= link_to current_user.email, user_path(current_user) %></li>
-                    <li role="presentation"  id="bust" ><%= link_to 'Log out', logout_url %></li>
-                    <li role="presentation"  id="bust" ><%= link_to 'Find other Users', users_path %></li>
+                    <li><a href="/users/<%= current_user.id %>"><img src=<%=current_user.image%> class="img-circle responsive-icon-image"></a></li>
+                    <!-- <li role="presentation"  id="bust" ><%#= link_to 'Log out', logout_url %></li> -->
+                    <!-- <li><a href="/"><i class="fa fa-heartbeat fa-2x" aria-hidden="true" ></i></a></li> -->
+                    <li><a href="/users/<%= current_user.id %>/followers"><i class="fa fa-users fa-2x" aria-hidden="true" ></i></a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-2x" aria-hidden="true" ></i></a></li>
                 <% else %>
-                    <li role="presentation"  id="bust" ><%= link_to 'Log In', login_url %></li>
-                    <li role="presentation"  id="bust" ><%= link_to 'Register', signup_url %></li>
-                    <li role="presentation"  id="bust" ><%= link_to 'Find other Users', users_path %></li>
+                    <li><a href="/login"><i class="fa fa-sign-in fa-2x" aria-hidden="true" ></i></a></li>
+                    <li><a href="/signup"><i class="fa fa-registered fa-2x" aria-hidden="true" ></i></a></li>
+                    <li><a href="/users"><i class="fa fa-users fa-2x" aria-hidden="true" ></i></a></li>
                <% end %>
-                <li role="presentation" id="bust"><%= link_to 'Home', root_path %></li>
+                <li><a href="/"><i class="fa fa-heartbeat fa-2x" aria-hidden="true" ></i></a></li>
                 </ul>
         </div>
     </div>

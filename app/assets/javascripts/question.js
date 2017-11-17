@@ -3,7 +3,13 @@ $(document).on("turbolinks:load", function(){
   like()
   update()
   // home_animation()
-
+  $("#lightGallery").lightGallery({
+      mode: 'slide',
+          useCSS: true,
+          cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+          easing: 'linear', //'for jquery animation',//
+          speed: 600,
+          addClass: '',});
 });
 
 
