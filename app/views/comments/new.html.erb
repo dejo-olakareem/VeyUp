@@ -1,0 +1,6 @@
+  <%= form_for ([@question,@comment])  do |f| %>
+      <%= f.text_field :text, placeholder: "Your Answer here", :required => true%>
+      <%= f.hidden_field :user_id, :value => current_user.id  %>
+      <%= f.hidden_field :question_id, :value => @question.id  %>
+      <%= f.submit "Comment" %>
+  <% end %>

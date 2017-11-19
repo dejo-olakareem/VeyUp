@@ -14,6 +14,7 @@ class Question < ApplicationRecord
   validate :picture_size
 
   belongs_to :user
+  has_many :comments
   has_many :answers
   has_many :votes, through: :answers
 

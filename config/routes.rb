@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :questions, only: [] do
     resources :answers, shallow: true
+    resources :comments, shallow: true
   end
 
   resources :answers, only: [] do
