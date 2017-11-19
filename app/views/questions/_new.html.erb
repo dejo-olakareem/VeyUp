@@ -1,9 +1,9 @@
 <div class="text-center responsive-div-ajax">
-  <%= form_for ([@survey,@question])  do |f| %>
+  <%= form_for ([@user,@question])  do |f| %>
     <%= f.text_field :text, placeholder: "Your Question here", class: 'responsive-input',:required => true %><br>
     <%#= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: 'responsive-survey_text' %>
     <%= f.submit "Create Question", class: 'btn btn-warning responsive-button' %>
-    <%= link_to "Back", survey_path(@survey), class: 'btn btn-warning responsive-button' %>
+    <%= link_to "Back", user_path(@user), class: 'btn btn-warning responsive-button' %>
 
   <% end %>
 </div>

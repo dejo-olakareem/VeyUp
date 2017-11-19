@@ -13,13 +13,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :sessions
   resources :users do
-    resources :surveys, shallow: true
+    resources :questions,shallow: true
     resources :reservations, shallow: true
   end
 
-  resources :surveys, only: [] do
-    resources :questions, shallow: true
-  end
 
   resources :questions, only: [] do
     resources :answers, shallow: true

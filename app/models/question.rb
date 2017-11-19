@@ -13,7 +13,7 @@ class Question < ApplicationRecord
   validates :text, presence: true
   validate :picture_size
 
-  belongs_to :survey
+  belongs_to :user
   has_many :answers
   has_many :votes, through: :answers
 

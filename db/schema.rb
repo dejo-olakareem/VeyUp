@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171115203104) do
 
   create_table "questions", force: :cascade do |t|
     t.text "text"
-    t.integer "survey_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"

@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user.surveys = @user.surveys.order("created_at").last(3)
+    @user.questions = @user.questions.order("created_at").last(3)
   end
 
   def following

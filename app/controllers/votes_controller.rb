@@ -10,12 +10,7 @@ class VotesController < ApplicationController
   def create
     @answer = Answer.find(params[:answer_id])
     @vote = @answer.question.votes.find_by(user_id: current_user.id)
-    fund = @answer.question.survey_id
-    survey = Survey.find(fund)
-    p "e" * 99
-    p fund
-    p survey.user.name
-    p "g" * 99
+
     if @vote
       old_answer_id = @vote.answer.id
       old_answer_vote_count = @vote.answer.votes.count - 1

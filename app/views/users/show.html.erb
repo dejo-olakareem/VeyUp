@@ -12,16 +12,16 @@
       </div>
 
     <div style="padding:0px 0px 10px 0px;">
-      <%= link_to "Start a survey", new_user_survey_path(@user, @survey), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
+      <%= link_to "Start a Question", new_user_question_path(@user, @question), remote: true, class: 'btn btn-warning responsive-button',id: "create_survey" %><br>
     </div>
-    <div id="survey_attach"></div>
-    <% if @user.surveys.empty? %>
-    <p class="survey_text">Start your Survey</p>
+    <div id="question_attach"></div>
+    <% if @user.questions.empty? %>
+    <p class="survey_text">Start your question</p>
     <% else %>
-    <p> This are your last 3 surveys</p>
+    <p> This are your last 3 Questionss</p>
     <!-- <div style="padding: :10px 0px 10px 0px;"> -->
-    <% @user.surveys.each do |survey| %>
-    <%= link_to survey.name, survey_path(survey), class: 'btn btn-warning responsive-button responsive-text', :style => 'margin-bottom: 10px;'%>
+    <% @user.questions.each do |question| %>
+    <%= link_to question.text, question_path(question), class: 'btn btn-warning responsive-button responsive-text', :style => 'margin-bottom: 10px;'%>
     <% end %>
     <!-- </div> -->
     <% end %>
