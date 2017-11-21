@@ -3,13 +3,6 @@ $(document).on("turbolinks:load", function(){
   like()
   update()
   home_animation()
-  $("#lightGallery").lightGallery({
-      mode: 'slide',
-          useCSS: true,
-          cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
-          easing: 'linear', //'for jquery animation',//
-          speed: 600,
-          addClass: '',});
 });
 
 
@@ -60,18 +53,18 @@ var home_animation = function(){
 
 
 var update = function(){
-$(".update").on("click", ".col-lg-2", (function(){
-  $(this).parent().siblings().children().attr("id","update_need")
-  var need_id = $(this).attr("id")
-  $("#update_need").attr('id',need_id)
+  $(".update").on("click", ".col-lg-2", (function(){
+    $(this).parent().siblings().children().attr("id","update_need")
+    var need_id = $(this).attr("id")
+    $("#update_need").attr('id',need_id)
 
-  $.ajax({
-    url: `/answers/design/${need_id}`,
-    method: $("form").attr("method")
-  }).done(function(res){
-    console.log(res)
-    $('#fill').val(res.filter)
-  });
+    $.ajax({
+      url: `/answers/design/${need_id}`,
+      method: $("form").attr("method")
+    }).done(function(res){
+      console.log(res)
+      $('#fill').val(res.filter)
+    });
 
-})
-)}
+  })
+  )}
