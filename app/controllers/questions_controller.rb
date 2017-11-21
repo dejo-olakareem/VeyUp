@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
  def index
-   @question = Question.all
+   @question = Question.all.sort
  end
 
  def show
@@ -29,7 +29,7 @@ def create
     if params[:question][:avatar].present?
       render 'crop'
     else
-      redirect_to user_path(@user)
+      redirect_to action: "index"
     end
   else
     render :new
@@ -43,7 +43,7 @@ def update
     if params[:question][:avatar].present?
       render :crop
     else
-      redirect_to survey_path(@survey)
+      redirect_to action: "index"
     end
   else
     render 'edit'

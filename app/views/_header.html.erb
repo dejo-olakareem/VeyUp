@@ -1,5 +1,5 @@
 
-<nav id="header" class="navbar navbar-default" style="background-color: #ffa50061;opacity: 1; color:black; border-style: none; box-shadow: 1px 1px 5px rgba(0,0,0,1);">
+<nav id="header" class="navbar navbar-default" style="background-color: #ffa50061;opacity: 0.7; color:black; border-style: none; box-shadow: 1px 1px 5px rgba(0,0,0,1);">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navcol-1">
              <a href="/" class="navbar-brand navbar-link" id="logo"><img src="/assets/LogoSample_ByTailorBrands.jpeg" width="40" style="margin-top:-10px;margin-left: -25px"/> </a>
@@ -7,7 +7,7 @@
                 <% if current_user %>
                     <li><a href="/users/<%= current_user.id %>"><img src=<%=current_user.image%> class="img-circle responsive-icon-image"></a></li>
                     <li><a href="/users/<%= current_user.id %>/followers"><i class="fa fa-users fa-2x" aria-hidden="true" ></i></a></li>
-                    <li><a href="/logout"><i class="fa fa-sign-out fa-2x" aria-hidden="true" ></i></a></li>
+                    <li><a href="/logout"><i class="fa fa-power-off fa-2x" aria-hidden="true" ></i></a></li>
                 <% else %>
                     <li><a href="/login"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" ></i></a></li>
                     <li><a href="/signup"><i class="fa fa-registered fa-2x" aria-hidden="true" ></i></a></li>

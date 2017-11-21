@@ -2,7 +2,7 @@ $(document).on("turbolinks:load", function(){
   hideCreateSurvey()
   like()
   update()
-  // home_animation()
+  home_animation()
   $("#lightGallery").lightGallery({
       mode: 'slide',
           useCSS: true,
@@ -39,8 +39,11 @@ var like = function(){
       url: url,
       method: method
     }).done(function(res){
-     update.parent().find(".vote_count").text(res["votes"])
-     $(`#${res.old_answer_id}`).text(res.old_answer_vote_count)
+     update.parent().find(".vote_count").text(res["votes"] + " Likes")
+     update.parent().parent().find(".fa-heart").removeClass("fa-heart").addClass("fa-heart-o")
+     update.parent().find(".fa-heart-o").removeClass("fa-heart-o").addClass("fa-heart")
+     $(`#${res.old_answer_id}`).text(res.old_answer_vote_count + " Likes")
+
    })
   });
 };
