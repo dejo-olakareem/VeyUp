@@ -44,6 +44,9 @@ gem 'light_gallery_rails', git: 'https://github.com/stNicolaas/light-gallery-rai
 #simple_for_for
 gem 'simple_form'
 
+#Faker
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 #date picker gem
 gem 'jquery-ui-rails', '5.0.5'
 #time picker gem
