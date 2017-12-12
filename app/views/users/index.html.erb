@@ -4,7 +4,10 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 text-center" style="height:100%;padding:5px 5px;">
         <% if !current_user %>
           <div style="padding:0px 0px 10px 0px;">
-            <% if user.image %>
+            <% if user.image === nil %>
+              <% user.image = "/assets/avatar_image.png"%>
+              <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-follow-image">
+            <% else %>
               <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-follow-image">
             <% end %>
             <p><a href="/users/<%= user.id %>"><%= user.name %></a></p>
@@ -14,7 +17,8 @@
         <% else  %>
           <% if user.id != current_user.id%>
             <div style="padding:0px 0px 10px 0px;">
-              <% if user.image %>
+              <% if user.image === nil %>
+                <% user.image = "/assets/avatar_image.png"%>
                 <img src=<%=user.image  + "?type=large"%> class="img-circle responsive-follow-image">
               <% end %>
               <p><a href="/users/<%= user.id %>"><%= user.name %></a></p>

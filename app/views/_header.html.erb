@@ -5,7 +5,16 @@
              <a href="/" class="navbar-brand navbar-link" id="logo"><img src="/assets/LogoSample_ByTailorBrands.jpeg" width="40" style="margin-top:-10px;margin-left: -25px"/> </a>
             <ul class="nav navbar-nav navbar-right" style="font: black;margin-bottom: -15px">
                 <% if current_user %>
-                    <li><a href="/users/<%= current_user.id %>"><img src=<%=current_user.image%> class="img-circle responsive-icon-image"></a></li>
+                    <li>
+                        <a href="/users/<%= current_user.id %>">
+                            <% if current_user.image === nil %>
+                                <% current_user.image = "/assets/avatar_image.png" %>
+                                <img src=<%=current_user.image%> class="img-circle responsive-icon-image">
+                            <% else %>
+                                <img src=<%=current_user.image%> class="img-circle responsive-icon-image">
+                            <% end %>
+                        </a>
+                    </li>
                     <li><a href="/users/<%= current_user.id %>/followers"><i class="fa fa-users fa-2x" aria-hidden="true" ></i></a></li>
                     <li><a href="/logout"><i class="fa fa-power-off fa-2x" aria-hidden="true" ></i></a></li>
                 <% else %>

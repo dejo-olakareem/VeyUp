@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(allowed_params)
-    if @user.image == nil
+    if @user.image === nil
       @user.image = "/assets/avatar_image.png"
     end
     if @user.save
