@@ -1,3 +1,8 @@
+<% if !current_user %>
+    <div class="text-center">
+    <p> <a href="/sessions/new">Log In</a> or <a href="/signup">Sign Up</a> to like answers and comment</p>
+    </div>
+<% end %>
 <div id="home-logo" class="container text-center">
   <div style="position:absolute;top:50%;left:50%;margin-top:-100px;margin-left:-100px;width:200px;height:200px;"><img src="/assets/LogoSample_ByTailorBrands.jpeg" class="img-responsive" /></div>
 </div>
