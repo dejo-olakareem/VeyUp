@@ -1,24 +1,12 @@
-# README
+#Vey Up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* This is a social media application that let a user ask question from other users
 
-Things you may want to cover:
+* Users can log in with their facebook or gmail account
 
-* Ruby version
+* Users can follow each other
 
-* System dependencies
+* Users can ask questions
 
-* Configuration
+* Users can comment on each others question
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
